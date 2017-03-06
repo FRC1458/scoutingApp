@@ -1,0 +1,195 @@
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="matchScoutingReportPage.css"/>
+        <style>
+        .Info{
+            font-size:20px;
+            text-align: center;
+            padding: 5pt;
+            background-color: white;
+            border-color:#282828;
+            border:10px;
+            width:700px;
+            height:1440px
+        }
+        
+        .Header{
+            background-color: white;
+            width:713px;
+            height:60px
+
+        }
+        
+        body{
+            margin-left:280px;
+            margin-right:300px;
+            background-color:#c41717;
+        }
+        
+        #Left{
+            text-align: left;
+            margin-left: 170px;
+        }
+        
+               img{
+            height:500px;
+            width:1263px;
+            opacity:0.5;
+            z-index:-1;
+            position: fixed;
+            margin:-280px;   
+        }
+        </style>
+    </head>
+     <img src="http://wallpapercave.com/wp/FSbLYPK.jpg"/> 
+    <body>
+        <div class="Header">
+        <header> Match Scouting Report Page </header>
+        <div>
+            <div class="Info">
+                <form action= "submitMatchReport.php" method= "POST">
+                    <div id="Left">
+                  <div id="Autonomous"><center><u><b> Autonomous: </u></div>
+                    </b> 
+                    <br> <br>
+                    
+                    
+                        Team Number:
+                        <input type = "number" name = "teamNumber"/>
+                        <br>
+                        <br>
+                        
+                        Crossed the line?
+                        <br>
+                        <input type = "radio" name = "crossLine" value = "True" checked = "checked"/> Yes
+                        <br>
+                        <input type = "radio" name = "crossLine" value = "False"> No
+                        <br>
+                        <br>
+                        
+                        Gear?
+                        <br>
+                        <input type = "radio" name = "gearUse" value = "True" checked = "checked"/> Yes
+                        <br>
+                        <input type = "radio" name = "gearUse" value = "False"/> No
+                        <br>
+                        <input type = "radio" name = "gearUse" value = "attempted"/> Attempted
+                        <br>
+                        <br>
+                        
+                        How many high balls?
+                        <input type="number" name = "highBallNumber">
+                        <br>
+                        
+                        How many low balls?
+                        <input type="number" name = "lowBallNumber">
+                        <br>
+                        <br>
+                    
+                   <div id="Teleop"><b><center> <u> Teleop: </u></div>
+                    </b>
+                    <br>
+                    <br>
+                    
+                        Attempted high goal?
+                        <br>
+                        <input type = "radio" name = "highGoal" value = "True" checked = "checked"> Yes
+                        <br>
+                        <input type = "radio" name = "highGoal" value = "False"> No
+                        <br>
+                        <br>
+                        
+                        Number of balls shot in high goal?
+                        <input type = "number" name = "highBallsShot">
+                        <br>
+                        <br>
+                        
+                        Attempted low goal?
+                        <br>
+                        <input type = "radio" name = "lowGoal" value = "True" checked = "checked"> Yes
+                        <br>
+                        <input type = "radio" name = "lowGoal" value = "False"> No
+                        <br>
+                        <br>
+                        
+                        Number of balls shot in low goal?
+                        <input type = "number" name = "lowBallsShot"> 
+                        <br>
+                        <br>
+                        
+                        Which feeder used?
+                        <br>
+                        <input type = "checkbox" name = "feederPreference[]" value = "Opposite Left" > Opposite 
+                        <br>
+                        <input type = "checkbox" name = "feederPreference[]" value = "Opposite Right" > Opposite right
+                        <br>
+                        <input type = "checkbox" name = "feederPreference[]" value = "Same Side"> Same side
+                        <br>
+                        <input type = "checkbox" name = "feederPreference[]" value = "No Feeder"> None
+                        <br>
+                        <input type = "checkbox" name = "feederPreference[]" value = "Not A Feeder Robot"> Not a feeder robot
+                        <br>
+                        <br>
+                        
+                        Capable of picking up balls?
+                        <br>
+                        <input type = "radio" name = "pickUp" value = "True" checked = "checked"> Yes
+                        <br>
+                        <input type = "radio" name = "pickUp" value = "False"> No
+                        <br>
+                        <br>
+                        
+                        Gears loaded into robot?
+                        <input type = "number" name = "gearsLoadedInRobot">
+                        <br>
+                        
+                        Gears passed to airship?
+                        <input type = "number" name = "gearsPassedInAirship">
+                        <br>
+                        <br>
+                        
+                        Peg preference?
+                        <br>
+                        <input type = "checkbox" name = "gearPegPreference[]" value = "Left peg"> Left
+                        <br>
+                        <input type = "checkbox" name = "gearPegPreference[]" value = "Right peg"> Right
+                        <br>
+                        <input type = "checkbox" name = "gearPegPreference[]" value = "Center peg"> Center
+                        <br>
+                        <br>
+                        Climb rope?
+                        <br>
+                        <input type = "radio" name = "climbRope" value = "True" checked = "checked"> Yes
+                        <br>
+                        <input type = "radio" name = "climbRope" value = "False"> No
+                        <br>
+                        <br>
+                        Comments?
+                        <input type = "text" name = "comments">
+                        <br>
+                        <br>
+                        
+                        Competition:
+                        <br>
+                        <input type = "radio" name = "competition" value = "Competition 1" checked = "checked"> San Francisco Regional
+                        <br>
+                        <input type = "radio" name = "competition" value = "Competition 2"> Sacramento Regional
+                        <br>
+                        <input type = "radio" name = "competition" value = "Competition 3"> Competition 3
+                        <br>
+                        <br>
+                        
+                        Team score:
+                        <input type = "number" name = "teamScore">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <button type = "submit" style="left:23%;"> <a><font size = 5> Submit </button></a>
+                        
+                        </div>
+                    </div>
+                </div>      
+                </form>
+    </body>
+</html>

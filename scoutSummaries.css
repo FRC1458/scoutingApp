@@ -1,0 +1,22 @@
+/*scout summaries css*/
+
+button{
+    color:#c41717;
+    font-family:Georgia, serif;
+    font-size:25px;
+    padding:5px 25px;
+    text-align: center;
+    position:relative;
+    top:20px;
+    text-decoration:underline;
+    border-radius:10%;
+    background-color:#282828;
+    border-color:#282828;
+}
+button:hover{
+    background-color:white;
+    border-color:white
+}
+a{
+    color:#c41717;
+}

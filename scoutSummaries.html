@@ -1,0 +1,75 @@
+<html>
+    <link rel="stylesheet" type="text/css" href="scoutSummaries.css">
+        <style>
+        
+        .Info{
+            font-size:21px;
+            text-align: center;
+            padding: 5pt;
+            background-color: white;
+            border:10px;
+            width:700px;
+            height:1310px
+        }
+        
+        .header{
+            background-color: white;
+            border:10px;
+            width:713px;
+            height:60px
+            padding: 5pt;
+
+        }
+        
+        body{
+            margin-left:280px;
+            margin-right:300px;
+            background-color:#c41717;
+        }
+        
+        #Left{
+            text-align: left;
+            margin-left: 170px;
+        }
+  
+        </style>
+    <body>
+            <div id="header"><header> <font size = 10> <center> <u> Poll Responses </header> <br></div>
+            
+            <div id="Info">
+                
+                <div id="Left">
+                <form action= "scoutSummariesReport.php" method= "POST">
+                    <font size = "5">
+                        List of competitions: </u> <br> 
+                        <input type = "checkbox" name = "competitions[]" value = "Competition X"> San Francisco Regional <br>
+                        <input type = "checkbox" name = "competitions[]" value = "Competition Y"> Sacramento Regional <br>
+                        <input type = "checkbox" name = "competitions[]" value = "Competition Z"> Competition Z <br>
+                        <input type = "checkbox" name = "competitions[]" value = "All" checked = "checked"> All <br>
+                        <br>
+                        <u> Show stats: </u> <br>
+                        <input type = "checkbox" name = "teamStats[]" value = "Team Score"> Team score <br>
+                        <input type = "checkbox" name = "teamStats[]" value = "Robot speed"> Robot speed <br>
+                        <input type = "checkbox" name = "teamStats[]" value = "Number of balls scored in low goal"> Number of balls scored in low goal <br>
+                        <input type = "checkbox" name = "teamStats[]" value = "Number of balls scored in high goal"> Number of balls scored in high goal <br>
+                        <input type = "checkbox" name = "teamStats[]" value = "Number of gears loaded into airship"> Number of gears loaded into airship <br>
+                        <input type = "checkbox" name = "teamStats[]" value = "All" checked = "checked"> All <br>
+                        <br>
+                        <u>Report type: </u><br>
+                        <input type = "radio" name = "reportType[]" value = "Pit Report"> Pit report <br>
+                        <input type = "radio" name = "reportType[]" value = "Match Report"> Match report <br>
+                        <input type = "radio" name = "reportType[]" value = "Both Reports" checked = "checked"> Both reports <br>
+                        <br>
+                        <u> Sort by... </u> <br>
+                        <input type = "radio" name = "sortBy" value = "Alphabetical" checked = "checked"> Alphabetical <br>
+                        <input type = "radio" name = "sortBy" value = "Stats"> Stats <br>
+                        <br>
+                        </div>
+                        <div style="text-align:center">
+                        <button type = "submit"> <font size = 5"> <center> Submit </button> </a>
+                        </div>
+                        
+                    </font>    
+                </form>
+    </body>
+</html>

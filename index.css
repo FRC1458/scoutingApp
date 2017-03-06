@@ -1,0 +1,40 @@
+/*index css*/
+body{
+    background-color:#282828;
+}
+
+header{
+    text-decoration:underline;
+    font-size:50px;
+    text-align:center;
+    color:#c41717;
+    font-family:Georgia, serif;
+     -webkit-transition-duration:1s;
+    transition-duration:1s;
+}
+
+button{
+    color:white;
+    font-family:Georgia, serif;
+    font-size:18px;
+    padding:5px 25px;
+    text-align: center;
+    position:relative;
+    top:30px;
+    text-decoration:underline;
+    border-radius:10%;
+    background-color:#c41717;
+    -webkit-transition-duration:0.4s;
+    transition-duration:0.4s;
+    border-color:#c41717;
+}
+
+button:hover{
+    background-color:#c41717;
+    border-color:#c41717;
+    color:black;
+}
+a{
+    color:#282828;
+}
+

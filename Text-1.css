@@ -1,0 +1,48 @@
+/*login css file*/
+body{
+    background-color:#282828;
+}
+
+header{
+    text-decoration:underline;
+    font-size:50px;
+    text-align:center;
+    color:#c41717;
+    font-family:Georgia, serif;
+     -webkit-transition-duration:1s;
+    transition-duration:1s;
+}
+
+div{
+    font-size:20px;
+    text-align:center;
+    color:#c41717;
+    font-family:Georgia,serif;
+     -webkit-transition-duration:0.7s;
+    transition-duration:0.7s;
+}
+
+button{
+    color:#c41717;
+    font-family:Georgia, serif;
+    font-size:18px;
+    padding:5px 25px;
+    text-align: center;
+    position:relative;
+    top:30px;
+    text-decoration:underline;
+    border-radius:10%;
+    background-color:white;
+    -webkit-transition-duration:0.4s;
+    transition-duration:0.4s;
+    border-color:white;
+}
+
+button:hover{
+    background-color:#c41717;
+    border-color:#c41717;
+    color:black;
+}
+/*this is just a test*/
+/*I will use photoshop to get a transparent bg*/
+

@@ -1,0 +1,38 @@
+/*enterScoutingData css*/
+/*Will enter a white background so that margin will be red*/
+body{
+    background-color:#c41717;
+}
+header{
+    text-decoration:underline;
+    font-size:50px;
+    text-align:center;
+    color:#282828;
+    font-family:Georgia, serif;
+    padding-bottom:30px;
+    -webkit-transition-duration:1s;
+    transition-duration:1s;
+}
+
+button{
+    color:#c41717;
+    font-family:Georgia, serif;
+    font-size:18px;
+    padding:5px 25px;
+    text-align: center;
+    position:relative;
+    top:30px;
+    text-decoration:underline;
+    border-radius:10%;
+    background-color:#282828;
+    border-color:#282828;
+    -webkit-transition-duration:0.4s;
+    transition-duration:0.4s;
+}
+button:hover{
+    background-color:white;
+    border-color:white
+}
+a{
+    color:#c41717;
+}

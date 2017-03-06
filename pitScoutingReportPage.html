@@ -1,0 +1,168 @@
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="pitScoutingReportPage.css"/>
+    <style>
+        
+        .Info{
+            font-size:21px;
+            text-align: center;
+            padding: 5pt;
+            background-color: white;
+            border:10px;
+            width:700px;
+            height:1310px
+        }
+        
+        .Header{
+            background-color: white;
+            border:10px;
+            width:713px;
+            height:60px
+            padding: 5pt;
+
+        }
+        
+        body{
+            margin-left:280px;
+            margin-right:300px;
+            background-color:#c41717;
+        }
+        
+        #Left{
+            text-align: left;
+            margin-left: 170px;
+        }
+        
+       img{
+            height:500px;
+            width:1263px;
+            opacity:0.5;
+            z-index:-1;
+            position: fixed;
+            margin:-280px;   
+        }
+        </style>
+    </head>
+         <img src="http://wallpapercave.com/wp/FSbLYPK.jpg"/> 
+    <body>
+         
+        <div class="Header">
+        <header> Pit Scouting Report Page </header>
+        </div
+        <br>
+        
+        <div class="Info">
+                
+            <div id="Left">
+                <form action ="submitPitReport.php" method= "POST">
+                    <br> 
+                        </u>
+                        Team number:
+                        <input type = "number" name = "teamNumber"/>
+                    <br>
+                        Team name (optional):
+                        <input type = "text" name = "teamName"/>
+                    <br>
+                        Max speed:
+                        <input type = "number" name = "maxSpeed"/>
+                    <br>
+                        Operating Speed:
+                        <input type = "number" name = "operatingSpeed"/>
+                    <br>
+                        Drive:
+                        <input type = "text" name = "driveName">
+                    <br>
+                    <br>
+                    
+                    Capable of autonomous?
+                    <br>
+                    <input type = "radio" name = "autonomous" value = "True" checked = "checked"> Yes
+                    <br>
+                    <input type = "radio" name = "autonomous" value = "False"> No <br>
+                    
+                    If yes, describe: <br>
+                    <textarea rows = "4" cols = "50" name = "autonomousDesc"> </textarea>
+                    <br>
+                    <br>
+                    
+                    Feeder Preference:
+                    <br>
+                    <input type = "checkbox" name = "feederPreference[]" value = "Opposite right"> Opposite right
+                    <br>
+                    <input type = "checkbox" name = "feederPreference[]" value = "Opposite left"> Opposite left
+                    <br>
+                    <input type = "checkbox" name = "feederPreference[]" value = "Same side"> Same Side
+                    <br>
+                    <input type = "checkbox" name = "feederPreference[]" value = "No feeder"> None
+                    <br>
+                    <input type = "checkbox" name = "feederPreference[]" value = "Not a feeder robot"> Not a Feeder Robot
+                    <br>
+                    <br>
+                    
+                    Capable of high goal?
+                    <br>
+                    <input type = "radio" name = "highGoal" value = "True" checked = "checked"> Yes
+                    <br>
+                    <input type = "radio" name = "highGoal" value = "False"> No <br>
+                    
+                    Capable of low goal?
+                    <br>
+                    <input type = "radio" name = "lowGoal" value = "True" checked = "checked"> Yes
+                    <br>
+                    <input type = "radio" name = "lowGoal" value = "False"> No
+                    <br>
+                    
+                    Max number of balls held?
+                    <input type = "number" name = "maxBalls"> 
+                    <br> <br>
+                    
+                    Capable of gears?
+                    <br>
+                    <input type = "radio" name = "capableOfGears" value = "True" checked = "checked"> Yes
+                    <br>
+                    <input type = "radio" name = "capableOfGears" value = "False"> No
+                    <br>
+                    
+                    If yes, gear peg preference:
+                    <br>
+                    <input type = "checkbox" name = "gearPreference[]" value = "Left"> Left
+                    <br>
+                    <input type = "checkbox" name = "gearPreference[]" value = "Right"> Right
+                    <br>
+                    <input type = "checkbox" name = "gearPreference[]" value = "Middle Peg"> Middle Peg
+                    <br>
+                    <input type = "checkbox" name = "gearPreference[]" value = "None"> None
+                    <br>
+                    <input type = "checkbox" name = "gearPreference[]" value = "Not a gear robot"> Not a gear robot
+                    <br> <br>
+                    
+                    Capable of rope?
+                    <br>
+                    <input type = "radio" name = "capableOfRope" value = "True" checked = "checked"> Yes
+                    <br>
+                    <input type = "radio" name = "capableOfRope" value = "False"> No
+                    <br>
+                    <br>
+                    
+                    Any other comments?
+                    <br>
+                    <textarea rows = "4" cols = "50" name = "otherComments"></textarea> 
+                    <br>
+                    <br>
+                    
+                    Which of these competitions are you going to?
+                    <br>
+                    <input type = "checkbox" name = "competition[]" value = "Competition 1"> San Francisco Regional
+                    <br>
+                    <input type = "checkbox" name = "competition[]" value = "Competition 2"> Sacramento Regional
+                    <br>
+                    <input type = "checkbox" name = "competition[]" value = "Competition 3"> Competition 3
+                    <br>
+                    </div>
+        
+            </div>
+                </br> <button type = "submit" style="left:42%;"> Submit </button> </a>
+                
+                </form>
+    </body>
+</html>
