@@ -59,9 +59,9 @@
     
     if ($result -> num_rows > 0) {
          print "<p> <font size = 5> <center> Match Report Table </center> </font> <table>
-                <tr> <th> Team Number </th> <th> Competition </th> <th> Score </th> <th> Low Goals </th> <th> High Goals </th> <th> Gears Loaded </th> <th> Reporter </th> <th> Report ID </th> </tr>";
+                <tr> <th> Team Number </th> <th> Competition </th> <th> Score </th> <th> Gears Passed </th> <th> Reporter </th> <th> Report ID </th> </tr>";
         while($row = $result -> fetch_assoc()) {
-            print "<tr> <td> <a href=\"showMatchReport.php?reportID=" . $row['reportID'] ."\">" . $row['teamNumber'] . "</a> </td> <td> " . $row['competition'] . "</td> <td>" . $row['teamScore'] . "</td> <td>" . $row['lowBallNumber'] . "</td> <td>" . $row['highBallNumber'] . "</td> <td>" . $row['gearsLoadedInRobot'] . "</td> <td>" . $row['reporterFirstName' ] . " " . $row['reporterLastName'] . "</td> <td>" . $row['reportID'] . "</td> </tr>";
+            print "<tr> <td> <a href=\"showMatchReport.php?reportID=" . $row['reportID'] ."\">" . $row['teamNumber'] . "</a> </td> <td> " . $row['competition'] . "</td> <td>" . $row['teamScore'] . "</td> <td>" . $row['gearsPassedInAirship'] . "</td> <td>" . $row['reporterFirstName' ] . " " . $row['reporterLastName'] . "</td> <td>" . $row['reportID'] . "</td> </tr>";
         }
         print "</p> </table>";
     } else {

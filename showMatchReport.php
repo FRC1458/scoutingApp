@@ -17,33 +17,46 @@ $conn = new mysqli($servername, $username, $password, $dbname);
          
         while($row = $result -> fetch_assoc()) {
             $teamNumber = $row['teamNumber'];
+            $driveStation = $row['driveStation'];
+            $autoHopper = $row['autoHopper'];
             $crossLine = $row['crossLine'];
             $gearUse = $row['gearUse'];
-            $highBallNumber = $row['highBallNumber'];
-            $lowBallNumber = $row['lowBallNumber'];
+            $shooterRating = $row['shooterRating'];
+            $engageHopper = $row['engageHopper'];
+            $shootingPlace = $row['shootingPlace'];
+            $whereShootingPlace = $row['whereShootingPlace'];
+            $susceptibleDefense = $row['susceptibleDefense'];
             $highGoal = $row['highGoal'];
-            $highBallsShot = $row['highBallsShot'];
             $lowGoal = $row['lowGoal'];
-            $lowBallsShot = $row['lowBallsShot'];
-            $oppositeLeft = $row['oppositeLeft'];
-            $oppositeRight = $row['oppositeRight'];
-            $sameSide = $row['sameSide'];
-            $noFeeder = $row ['noFeeder'];
-            $notFeederRobot = $row['notFeederRobot'];
+            $feederPreferenceList = $row['feederPreference'];
             $pickUp = $row['pickUp'];
-            $gearsLoadedInRobot = $row['gearsLoadedInRobot'];
+            $nuclear = $row['nuclear'];
+            $teleopHopper = $row['teleopHopper'];
             $gearsPassedInAirship = $row['gearsPassedInAirship'];
-            $leftPeg = $row['leftPeg'];
-            $rightPeg = $row['rightPeg'];
-            $centerPeg = $row['centerPeg'];
+            $gearPegPreferenceList = $row['gearPegPreference'];
+            $headingToRopeTime = $row['headingToRopeTime'];
+            $timeToGrab = $row['timeToGrab'];
+            $timeToClimb = $row['timeToClimb'];
+            $lightOn = $row['lightOn'];
             $climbRope = $row['climbRope'];
             $comments = $row['comments'];
+            $robotDefense = $row['robotDefense'];
+            $robotRating = $row['robotRating'];
             $competition = $row['competition'];
             $teamScore = $row['teamScore'];
             $reporter = $row['reporterFirstName'] . " " .  $row['reporterLastName'];
         }
         #print "<p> Showing report for reportID: $reportID </p>";
     print "<p> Showing report for Team $teamNumber </p>";
+    print "<p> What drive station did the robot come from? $driveStation </p>";
+    print "<p> Autonomous hopper?";
+    if ($autoHopper === "0")
+    {
+        print " No";
+    } else {
+        print " Yes";
+    }
+    print "</p>";
     print "<p> Crossed the line?";
     if ($crossLine === "0")
     {
@@ -53,6 +66,32 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     }
     print "</p>";
     print "<p> Using Gears? $gearUse </p>";
+    print "<p> Shooter rating: $shooterRating </p>";
+    print "<p> Engaged hopper:";
+    if ($engageHopper === "0")
+    {
+        print " No";
+    } else {
+        print " Yes";
+    }
+    print "</p>";
+    print "<p> Had to shoot from a specific place?";
+    if ($shootingPlace === "0")
+    {
+        print " No";
+    } else {
+        print " Yes";
+    }
+    print "</p>";
+    print "<p> If so, where? $whereShootingPlace </p>";
+    print "<p> Susceptible to defense?";
+    if ($susceptibleDefense === "0")
+    {
+        print " No";
+    } else {
+        print " Yes";
+    }
+    print "</p>";
     print "<p> Attempted high goal:";
     if ($highGoal === "0")
     {
@@ -61,8 +100,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         print " Yes";
     }
     print "</p>";
-    print "<p> High balls attempted: $highBallsShot ";
-    print " Scored: $highBallNumber </p>";
     print "<p> Attempted low goal:";
     if ($lowGoal === "0")
     {
@@ -71,10 +108,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         print " Yes";
     }
     print "</p>";
-    print "<p> Low balls attempted: $lowBallsShot";
-    print " Scored: $lowBallNumber </p>";
 
-    if(($oppositeLeft === "1") || ($oppositeRight === "1") || ($sameSide === "1") || ($noFeeder === "1") || ($notFeederRobot === "1"))
+    if(($oppositeLeft === "1") || ($oppositeRight === "1") || ($sameSide === "1") || ($noFeeder === "1"))
     {
         print "<p> Feeder preference: ";
         if ($oppositeLeft === "1")
@@ -92,15 +127,27 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         if ($noFeeder === "1")
         {
             print "No feeder ";
-        }
-        if ($notFeederRobot === "1")
-        {
-            print "Not feeder robot ";
-        }
+        
         print "</p>";
     }
     print "<p> Capable of picking up balls?";
     if ($pickUp === "0")
+    {
+        print " No";
+    } else {
+        print " Yes";
+    }
+    print "</p>";
+    print "<p> Nuclear option?";
+    if ($nuclear === "0")
+    {
+        print " No";
+    } else {
+        print " Yes";
+    }
+    print "</p>";
+    print "<p> Teleop hopper?";
+    if ($teleopHopper === "0")
     {
         print " No";
     } else {
@@ -127,6 +174,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         }
         print "</p>";
     }
+    print "<p> When did it head to the rope (seconds)? $headingToRopeTime </p>";
+    print "<p> Time to grab rope (seconds)? $timeToGrab </p>";
+    print "<p> Time to climb rope (seconds)? $timeToClimb </p>";
+    print "<p> Did the light stay on past T=0? $lightOn </p>";
     print "<p> Able to climb rope?";
     if ($climbRope === "0")
     {
@@ -135,7 +186,18 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         print " Yes";
     }
     print "</p>";
+
     print "<p> Comments: $comments </p>";
+    
+    print "<p> Does the robot play defense?";
+    if ($robotDefense === "0")
+    {
+        print " No";
+    } else {
+        print " Yes";
+    }
+    print "</p>";
+    print "<p> Robot rating: $robotRating </p>";
     print "<p> Team score: $teamScore </p>";
    
     if ($competition === "Competition 1")
@@ -152,7 +214,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     }
     print "<p> Reporter: $reporter </p>";
     $conn->close();
-    
+    }
 
 
 #get report details from database and display TO DO

@@ -32,7 +32,7 @@ button{
 }
 button:hover{
     background-color:white;
-    border-color:white
+    border-color:white;
 }
 a{
     color:#c41717;
