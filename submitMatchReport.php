@@ -50,7 +50,6 @@
     $oppositeRight = "False";
     $sameSide = "False";
     $noFeeder = "False";
-    $notFeederRobot = "False";
     
     $leftPeg = "False";
     $rightPeg = "False";
@@ -101,13 +100,14 @@
     oppositeLeft, oppositeRight, sameSide, noFeeder, pickUp, nuclear, teleopHopper, gearsPassedInAirship, 
     leftPeg, rightPeg, centerPeg, headingToRopeTime, timeToGrab, timeToClimb, lightOn, climbRope,
     comments, robotDefense, robotRating, competition, teamScore, reporterFirstName, reporterLastName)
-    VALUES ('$teamNumber', '$driveStation', '$autoHopper', '$crossLine', '$gearUse', '$shooterRating',
-    '$engageHopper', '$shootingPlace', '$whereShootingPlace', '$susceptibleDefense', '$highGoal', 
-    '$lowGoal', '$oppositeLeft', '$oppositeRight', '$sameSide', '$noFeeder', '$pickUp', '$nuclear',
-    '$teleopHopper', '$gearsPassedInAirship', '$leftPeg', '$rightPeg', '$centerPeg', '$headingToRopeTime',
-    '$timeToGrab', '$timeToClimb', '$lightOn', $climbRope, '$comments', '$robotDefense', '$robotRating',
-    '$competition', '$teamScore', '$reporterFirstName', '$reporterLastName')";
+    VALUES ('$teamNumber', '$driveStation', $autoHopper, $crossLine, '$gearUse', $shooterRating,
+    $engageHopper, $shootingPlace, '$whereShootingPlace', $susceptibleDefense, $highGoal, 
+    $lowGoal, $oppositeLeft, $oppositeRight, $sameSide, $noFeeder, $pickUp, $nuclear,
+    $teleopHopper, '$gearsPassedInAirship', $leftPeg, $rightPeg, $centerPeg, '$headingToRopeTime',
+    '$timeToGrab', '$timeToClimb', $lightOn, $climbRope, '$comments', $robotDefense, $robotRating,
+    '$competition', $teamScore, '$reporterFirstName', '$reporterLastName')";
     
+    print "$sql";
     $result = $conn->query($sql);
     
     if ($result === TRUE) {

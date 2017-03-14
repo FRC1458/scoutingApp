@@ -10,7 +10,7 @@
             background-color: white;
             border:10px;
             width:700px;
-            height:1310px
+            height:2500px
         }
         
         .Header{
@@ -63,15 +63,71 @@
                         Team name (optional):
                         <input type = "text" name = "teamName"/>
                     <br>
-                    #Add just one speed
                         Max speed:
                         <input type = "number" name = "maxSpeed"/>
                     <br>
-                        Operating Speed:
-                        <input type = "number" name = "operatingSpeed"/>
+                        <b> Drive: </b>
+                        <br>
+                        Transmission
+                        <br>
+                        <input type = "radio" name = "transmission" value = "True" checked = "checked"> Yes
+                        <br>
+                        <input type = "radio" name = "transmission" value = "False"> No <br>
+                        <br>
+                        Number of wheels:
+                        <br>
+                        <input type = "radio" name = "wheelNumber" value = "4"> 4
+                        <br>
+                        <input type = "radio" name = "wheelNumber" value = "6"> 6
+                        <br>
+                        <input type = "radio" name = "wheelNumber" value = "8"> 8
+                        <br>
+                        Drive type:
+                        <br>
+                        <input type = "radio" name = "driveType" value = "westCoast"> West Coast
+                        <br>
+                        <input type = "radio" name = "driveType" value = "Swerve"> Swerve
+                        <br>
+                        <input type = "radio" name = "driveType" value = "Mecanum"> Mecanum
+                        <br>
+                        <input type = "radio" name = "driveType" value = "Omni"> Omni
+                        <br>
+                        <input type = "radio" name = "driveType" value = "Other"> Other
+                        <br>
+                        If other, describe:
+                        <br>
+                        <input type = "text" name = "driveDescription" value = " ">
+                        <br>
                     <br>
-                        Drive:
-                        <input type = "text" name = "driveName">
+                    <b>Prefered strategy: </b>
+                    <br>
+                    Shooter?
+                    <br>
+                    <input type = "radio" name = "shooterStrategy" value = "True"> Yes
+                    <br>
+                    <input type = "radio" name = "shooterStrategy" value = "False" checked = "checked"> No <br>
+                    <br>
+                    Gears?
+                    <br>
+                    <input type = "radio" name = "gearStrategy" value = "True"> Yes
+                    <br>
+                    <input type = "radio" name = "gearStrategy" value = "False" checked = "checked"> No <br>
+                    <br>
+                    Defense?
+                    <br>
+                    <input type = "radio" name = "defenseStrategy" value = "True"> Yes
+                    <br>
+                    <input type = "radio" name = "defenseStrategy" value = "False" checked = "checked"> No <br>
+                    <br>
+                    Nuclear option with regards to hoppers?
+                    <br>
+                    <input type = "radio" name = "nuclearStrategy" value = "True"> Yes
+                    <br>
+                    <input type = "radio" name = "nuclearStrategy" value = "False" checked = "checked"> No <br>
+                    <br>
+                    Describe your strategy. How do you plan to win the game?
+                    <br>
+                    <input type = "text" name = "howToWin" value = " ">
                     <br>
                     <br>
                     
@@ -79,11 +135,39 @@
                     <br>
                     <input type = "radio" name = "autonomous" value = "True" checked = "checked"> Yes
                     <br>
-                    <input type = "radio" name = "autonomous" value = "False"> No <br>
-                    
-                    If yes, describe: <br>
-                    <textarea rows = "4" cols = "50" name = "autonomousDesc"> </textarea>
+                    <input type = "radio" name = "autonomous" value = "False"> No
                     <br>
+                    Autonomous capabilities
+                    <br>
+                    Gear:
+                    <br>
+                    <input type = "radio" name = "autonomousGear" value = "True" checked = "checked"> Yes
+                    <br>
+                    <input type = "radio" name = "autonomousGear" value = "False"> No
+                    <br>
+                    Balls in high goal:
+                    <br>
+                    <input type = "radio" name = "autonomousHighGoal" value = "True" checked = "checked"> Yes
+                    <br>
+                    <input type = "radio" name = "autonomousHighGoal" value = "False"> No
+                    <br>
+                    Balls in low goal:
+                    <br>
+                    <input type = "radio" name = "autonomousLowGoal" value = "True" checked = "checked"> Yes
+                    <br>
+                    <input type = "radio" name = "autonomousLowGoal" value = "False"> No
+                    <br>
+                    Balls from hopper:
+                    <br>
+                    <input type = "radio" name = "autonomousHopper" value = "True" checked = "checked"> Yes
+                    <br>
+                    <input type = "radio" name = "autonomousHopper" value = "False"> No
+                    <br>
+                    Cross line:
+                    <br>
+                    <input type = "radio" name = "autonomousCrossLine" value = "True" checked = "checked"> Yes
+                    <br>
+                    <input type = "radio" name = "autonomousCrossLine" value = "False"> No
                     <br>
                     
                     Feeder Preference:
@@ -95,8 +179,6 @@
                     <input type = "checkbox" name = "feederPreference[]" value = "Same side"> Same Side
                     <br>
                     <input type = "checkbox" name = "feederPreference[]" value = "No feeder"> None
-                    <br>
-                    <input type = "checkbox" name = "feederPreference[]" value = "Not a feeder robot"> Not a Feeder Robot
                     <br>
                     <br>
                     
@@ -112,7 +194,10 @@
                     <br>
                     <input type = "radio" name = "lowGoal" value = "False"> No
                     <br>
-                    
+                    Approximate number of balls per second:
+                    <br>
+                    <input type = "number" name = "ballsPerSecond"> balls
+                    <br>
                     Max number of balls held?
                     <input type = "number" name = "maxBalls"> 
                     <br> <br>
@@ -133,15 +218,21 @@
                     <input type = "checkbox" name = "gearPreference[]" value = "Middle Peg"> Middle Peg
                     <br>
                     <input type = "checkbox" name = "gearPreference[]" value = "None"> None
-                    <br>
-                    <input type = "checkbox" name = "gearPreference[]" value = "Not a gear robot"> Not a gear robot
                     <br> <br>
                     
+                    Climbing capabilities:
+                    <br>
                     Capable of rope?
                     <br>
                     <input type = "radio" name = "capableOfRope" value = "True" checked = "checked"> Yes
                     <br>
                     <input type = "radio" name = "capableOfRope" value = "False"> No
+                    <br>
+                    How long, in seconds, does it take to:
+                    <br>
+                    Attach? <input type = "number" name = "attachTime">
+                    <br>
+                    Climb? <input type = "number" name = "climbTime">
                     <br>
                     <br>
                     

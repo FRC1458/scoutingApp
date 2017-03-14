@@ -17,7 +17,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     if ($result -> num_rows > 0) {
          
         while($row = $result -> fetch_assoc()) {
-                
+             /*   
             $teamNumber = $row['teamNumber'];
             $teamName = $row['teamName'];
             $maxSpeed = $row['maxSpeed'];
@@ -34,7 +34,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             $lowGoal = $row['lowGoal'];
             $maxBalls = $row['maxBalls'];
             $capableOfGears = $row['capableOfGears'];
-            $gearLeft = $row['gearRight'];
+            $gearLeft = $row['gearLeft'];
             $gearRight = $row['gearRight'];
             $gearMiddlePeg = $row['gearMiddlePeg'];
             $gearNone = $row['gearNone'];
@@ -44,13 +44,94 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             $competition1 = $row['competition1'];
             $competition2 = $row['competition2'];
             $competition3 = $row['competition3'];
+            */
+            $teamNumber = $row['teamNumber'];
+            $teamName = $row['teamName'];
+            $maxSpeed = $row['maxSpeed'];
+            $transmission = $row['transmission'];
+            $wheelNumber = $row['wheelNumber'];
+            $driveType = $row['driveType'];
+            $driveDescription = $row['driveDescription'];
+            $shooterStrategy = $row['shooterStrategy'];
+            $gearStrategy = $row['gearStrategy'];
+            $defenseStrategy = $row['defenseStrategy'];
+            $nuclearStrategy = $row ['nuclearStrategy'];
+            $howToWin = $row['howToWin'];
+            $autonomous = $row['autonomous'];
+            $autonomousGear = $row['autonomousGear'];
+            $autonomousHighGoal = $row['autonomousHighGoal'];
+            $autonomousLowGoal = $row['autonomousLowGoal'];
+            $autonomousHopper = $row['autonomousHopper'];
+            $autonomousCrossLine = $row['autonomousCrossLine'];
+            $oppositeRight = $row['oppositeRight'];
+            $oppositeLeft = $row['oppositeLeft'];
+            $sameSide = $row['sameSide'];
+            $none = $row ['none'];
+            $highGoal = $row['highGoal'];
+            $lowGoal = $row['lowGoal'];
+            $ballsPerSecond = $row['ballsPerSecond'];
+            $maxBalls = $row['maxBalls'];
+            $capableOfGears = $row['capableOfGears'];
+            $gearLeft = $row['gearLeft'];
+            $gearRight = $row['gearRight'];
+            $gearMiddlePeg = $row['gearMiddlePeg'];
+            $gearNone = $row['gearNone'];
+            $capableOfRope = $row['capableOfRope'];
+            $attachTime = $row['attachTime'];
+            $climbTime = $row['climbTime'];
+            $otherComments = $row['otherComments'];
+            $competition1 = $row['competition1'];
+            $competition2 = $row['competition2'];
+            $competition3 = $row['competition3'];
             $reporter = $row['reporterFirstName'] . " " .  $row['reporterLastName'];
         }
         print "<p> Showing report for Team $teamNumber </p>";
         print "<p> Team name: $teamName </p>";
         print "<p> Max speed: $maxSpeed </p>";
-        print "<p> Operating speed: $operatingSpeed </p>";
-        print "<p> Drive name: $driveName </p>";
+        print "<p> Transmission?";
+        if ($transmission === "0")
+        {
+            print " No";
+        } else {
+            print " Yes";
+        }
+        print "</p>";
+        print "<p> Wheel number: $wheelNumber </p>";
+        print "<p> Drive type: $driveType </p>";
+        print "<p> Drive description: $driveDescription </p>";
+        print "<p> Shooter strategy?";
+        if ($shooterStrategy === "0")
+        {
+            print " No";
+        } else {
+            print " Yes";
+        }
+        print "</p>";
+        print "<p> Gear strategy?";
+        if ($gearStrategy === "0")
+        {
+            print " No";
+        } else {
+            print " Yes";
+        }
+        print "</p>";
+        print "<p> Defense strategy?";
+        if ($defenseStrategy === "0")
+        {
+            print " No";
+        } else {
+            print " Yes";
+        }
+        print "</p>";
+        print "<p> Nuclear strategy?";
+        if ($nuclearStrategy === "0")
+        {
+            print " No";
+        } else {
+            print " Yes";
+        }
+        print "</p>";
+        print "<p> How team intends to win: $howToWin </p>";
         print "<p> Autonomous?";
         if ($autonomous === "0")
         {
@@ -59,8 +140,47 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             print " Yes";
         }
         print "</p>";
-        print "<p> Autonomous description: $autonomousDesc </p>";
-        if(($oppositeLeft === "1") || ($oppositeRight === "1") || ($sameSide === "1") || ($noFeeder === "1") || ($notFeederRobot === "1"))
+        print "<p> Capable of gear in autonomous?";
+        if ($autonomousGear === "0")
+        {
+            print " No";
+        } else {
+            print " Yes";
+        }
+        print "</p>";
+        print "<p> Capable of high goal in autonomous?";
+        if ($autonomousHighGoal=== "0")
+        {
+            print " No";
+        } else {
+            print " Yes";
+        }
+        print "</p>";
+        print "<p> Capable of low goal in autonomous?";
+        if ($autonomousLowGoal === "0")
+        {
+            print " No";
+        } else {
+            print " Yes";
+        }
+        print "</p>";
+        print "<p> Hopper in autonomous?";
+        if ($autonomousHopper === "0")
+        {
+            print " No";
+        } else {
+            print " Yes";
+        }
+        print "</p>";
+        print "<p> Crossing line in autonomous?";
+        if ($autonomousCrossLine === "0")
+        {
+            print " No";
+        } else {
+            print " Yes";
+        }
+        print "</p>";
+        if(($oppositeLeft === "1") || ($oppositeRight === "1") || ($sameSide === "1") || ($noFeeder === "1"))
     {
         print "<p> Feeder preference: ";
         if ($oppositeLeft === "1")
@@ -78,10 +198,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         if ($none === "1")
         {
             print "No feeder ";
-        }
-        if ($notFeederRobot === "1")
-        {
-            print "Not feeder robot ";
         }
     }
         print "</p>";
@@ -101,6 +217,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             print " Yes";
         }
         print "</p>";
+        print "<p> Balls per second: $ballsPerSecond </p>";
         print "<p> Max balls : $maxBalls </p>";
         print "<p> Capable of gears: ";
         if ($capableOfGears === "0")
@@ -110,12 +227,12 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             print " Yes";
         }
         print "</p>";
-        if(($gearLeft === "1") || ($gearRight === "1") || ($gearMiddlePeg === "1") || ($gearNone === "1") || ($notAGearRobot === "1"))
+        if(($gearLeft === "1") || ($gearRight === "1") || ($gearMiddlePeg === "1") || ($gearNone === "1"))
     {
         print "<p> Gear preference: ";
         if ($gearLeft === "1")
         {
-            print "Left gear";
+            print "Left gear ";
         }
         if ($gearRight === "1")
         {
@@ -123,16 +240,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         }
         if ($gearMiddlePeg === "1")
         {
-            print "Middle peg gear";
+            print "Middle peg gear ";
         }
         if ($gearNone === "1")
         {
-            print "No gear";
+            print "No gear ";
         }
-        if ($notAGearRobot === "1")
-        {
-            print "Not a gear robot ";
-        }
+        
     }
         print "</p>";
         print "<p> Capable of rope? ";
@@ -143,6 +257,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             print " Yes";
         }
         print "</p>";
+        print "<p> Attach time: $attachTime </p>";
+        print "<p> Climb time: $climbTime </p>";
         print "<p> Comments: $otherComments </p>";
         print "<p> Competition: ";
         

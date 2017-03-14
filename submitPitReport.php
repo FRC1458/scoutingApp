@@ -3,17 +3,31 @@
     $teamNumber = $_POST['teamNumber'];
     $teamName = $_POST['teamName'];
     $maxSpeed = $_POST['maxSpeed'];
-    $operatingSpeed = $_POST['operatingSpeed'];
-    $driveName = $_POST['driveName'];
+    $transmission = $_POST['transmission'];
+    $wheelNumber = $_POST['wheelNumber'];
+    $driveType = $_POST['driveType'];
+    $driveDescription = $_POST['driveDescription'];
+    $shooterStrategy = $_POST['shooterStrategy'];
+    $gearStrategy = $_POST['gearStrategy'];
+    $defenseStrategy = $_POST['defenseStrategy'];
+    $nuclearStrategy = $_POST ['nuclearStrategy'];
+    $howToWin = $_POST['howToWin'];
     $autonomous = $_POST['autonomous'];
-    $autonomousDesc = $_POST['autonomousDesc'];
+    $autonomousGear = $_POST['autonomousGear'];
+    $autonomousHighGoal = $_POST['autonomousHighGoal'];
+    $autonomousLowGoal = $_POST['autonomousLowGoal'];
+    $autonomousHopper = $_POST['autonomousHopper'];
+    $autonomousCrossLine = $_POST['autonomousCrossLine'];
     $feederPreferenceList = $_POST['feederPreference'];
     $highGoal = $_POST['highGoal'];
     $lowGoal = $_POST['lowGoal'];
+    $ballsPerSecond = $_POST['ballsPerSecond'];
     $maxBalls = $_POST['maxBalls'];
     $capableOfGears = $_POST['capableOfGears'];
     $gearPreferenceList = $_POST['gearPreference'];
     $capableOfRope = $_POST['capableOfRope'];
+    $attachTime = $_POST['attachTime'];
+    $climbTime = $_POST['climbTime'];
     $otherComments = $_POST['otherComments'];
     $competitionList = $_POST['competition'];
     
@@ -67,9 +81,6 @@
             if($tempmp === "No feeder") {
                 $none = "True";
             }
-            if($tempmp === "Not a feeder robot") {
-                $notFeederRobot = "True";
-            }
         }
     }
     
@@ -88,9 +99,6 @@
             }
             if($tempmp === "None") {
                 $gearNone = "True";
-            }
-            if($tempmp === "Not a gear robot") {
-                $notAGearRobot = "True";
             }
         }
     }
@@ -116,17 +124,20 @@
     if ($conn->connect_error) {
         die("Connection: " . $conn->connect_error);
     }
-    $sql = "INSERT INTO $pitTable (teamNumber, teamName, maxSpeed, operatingSpeed,
-    driveName, autonomous, autonomousDesc, oppositeRight, oppositeLeft, sameSide,
-    none, notFeederRobot, highGoal, lowGoal, maxBalls, capableOfGears, gearLeft,
-    gearRight, gearMiddlePeg, gearNone, notAGearRobot, capableOfRope, comments,
+    $sql = "INSERT INTO $pitTable (teamNumber, teamName, maxSpeed, transmission, wheelNumber, driveType,
+    driveDescription, shooterStrategy, gearStrategy, defenseStrategy, nuclearStrategy,
+    howToWin, autonomous, autonomousGear, autonomousHighGoal, autonomousLowGoal, autonomousHopper,
+    autonomousCrossLine, oppositeRight, oppositeLeft, sameSide,
+    none, highGoal, lowGoal, ballsPerSecond, maxBalls, capableOfGears, gearLeft,
+    gearRight, gearMiddlePeg, gearNone, capableOfRope, attachTime, climbTime, otherComments,
     competition1, competition2, competition3, reporterFirstName, reporterLastName)
-    VALUES ( '$teamNumber', '$teamName', '$maxSpeed', 
-    '$operatingSpeed', '$driveName', $autonomous, '$autonomousDesc', $oppositeRight, $oppositeLeft, $sameSide,
-    $none, $notFeederRobot, $highGoal, $lowGoal, '$maxBalls', $capableOfGears, $gearLeft, $gearRight,
-    $gearMiddlePeg, $gearNone, $notAGearRobot, $capableOfRope, '$otherComments', $competition1, $competition2,
-    $competition3, '$reporterFirstName', '$reporterLastName')";
-   
+    VALUES ( '$teamNumber', '$teamName', '$maxSpeed', $transmission, '$wheelNumber', '$driveType',
+    '$driveDescription', $shooterStrategy, $gearStrategy, $defenseStrategy, $nuclearStrategy,
+    '$howToWin', $autonomous, $autonomousGear, $autonomousHighGoal, $autonomousLowGoal,
+    $autonomousHopper, $autonomousCrossLine, $oppositeRight, $oppositeLeft, $sameSide,
+    $none, $highGoal, $lowGoal, '$ballsPerSecond', '$maxBalls', $capableOfGears, $gearLeft, $gearRight,
+    $gearMiddlePeg, $gearNone, $capableOfRope, '$attachTime', '$climbTime', '$otherComments',
+    $competition1, $competition2, $competition3, '$reporterFirstName', '$reporterLastName')";
    /* $sql = "INSERT INTO " . $pitTable . " (teamNumber, teamName, maxSpeed, operatingSpeed,
     driveName, autonomous, autonomousDesc, oppositeRight, oppositeLeft, sameSide,
     none, notFeederRobot, highGoal, lowGoal, maxBalls, capableOfGears, gearLeft,
@@ -149,10 +160,21 @@
         echo "Following report added to database:";
            print "<p> Team Name: $teamNumber </p>";
     print "<p> Max Speed: $maxSpeed </p>";
-    print "<p> Operating Speed: $operatingSpeed </p>";
-    print "<p> Drive: $driveName </p>";
+    print "<p> Transmission? $transmission </p>";
+    print "<p> Wheel number: $wheelNumber </p>";
+    print "<p> Drive type? $driveType </p>";
+    print "<p> Drive description: $driveDescription </p>";
+    print "<p> Shooter strategy? $shooterStrategy </p>";
+    print "<p> Gear strategy? $gearStrategy </p>";
+    print "<p> Defense strategy? $defenseStrategy </p>";
+    print "<p> Nuclear option with regards to hoppers? $nuclearStrategy </p>";
+    print "<p> Explain strategy. How do you plan to win? $howToWin </p>";
     print "<p> Autonomous: $autonomous </p>";
-    print "<p> Description (if yes): $autonomousDesc </p>";
+    print "<p> Capable of gears in autonomous? $autonomousGear </p>";
+    print "<p> Capable of high goal in autonomous? $autonomousHighGoal </p>";
+    print "<p> Capable of low goal in autonomous? $autonomousLowGoal </p>";
+    print "<p> Capable of hopper in autonomous? $autonomousHopper </p>";
+    print "<p> Going to cross line in autonomous? $autonomousCrossLine </p>";
     if(!empty($feederPreferenceList))
     {
         print "<p> Feeder preference: </p>";
@@ -166,6 +188,7 @@
     }
     print "<p> Capable of high goal? $highGoal </p>";
     print "<p> Capable of low goal? $lowGoal </p>";
+    print "<p> Balls per second? $ballsPerSecond </p>";
     print "<p> Max number of balls held? $maxBalls </p>";
     print "<p> Capable of high goal? $capableOfGears </p>";
     if(!empty($gearPreferenceList))
@@ -180,6 +203,8 @@
         print "</ul>";
     }
     print "<p> Capable of using rope? $capableOfRope </p>";
+    print "<p> Time that it took to attach? $attachTime </p>";
+    print "<p> Time that it took to climb? $climbTime </p>";
     print "<p> Any other comments? $otherComments </p>";
     if(!empty($competitionList))
     {

@@ -28,12 +28,17 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             $susceptibleDefense = $row['susceptibleDefense'];
             $highGoal = $row['highGoal'];
             $lowGoal = $row['lowGoal'];
-            $feederPreferenceList = $row['feederPreference'];
+            $oppositeLeft = $row['oppositeLeft'];
+            $oppositeRight = $row['oppositeRight'];
+            $sameSide = $row['sameSide'];
+            $noFeeder = $row['noFeeder'];
             $pickUp = $row['pickUp'];
             $nuclear = $row['nuclear'];
             $teleopHopper = $row['teleopHopper'];
             $gearsPassedInAirship = $row['gearsPassedInAirship'];
-            $gearPegPreferenceList = $row['gearPegPreference'];
+            $leftPeg = $row['leftPeg'];
+            $rightPeg = $row['rightPeg'];
+            $centerPeg = $row['centerPeg'];
             $headingToRopeTime = $row['headingToRopeTime'];
             $timeToGrab = $row['timeToGrab'];
             $timeToClimb = $row['timeToClimb'];
@@ -108,6 +113,27 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         print " Yes";
     }
     print "</p>";
+    if(($oppositeLeft === "1") || ($oppositeRight === "1") || ($sameSide === "1") || ($noFeeder === "1"))
+    {
+        print "<p> Feeder preference: ";
+        if ($oppositeLeft === "1")
+        {
+            print "Opposite left ";
+        }
+        if ($oppositeRight === "1")
+        {
+            print "Opposite right ";
+        }
+        if ($sameSide === "1")
+        {
+            print "Same side ";
+        }
+        if ($noFeeder === "1")
+        {
+            print "No feeder ";
+        }
+    }
+    print "</p>";
 
     if(($oppositeLeft === "1") || ($oppositeRight === "1") || ($sameSide === "1") || ($noFeeder === "1"))
     {
@@ -154,7 +180,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         print " Yes";
     }
     print "</p>";
-    print "<p> Gears loaded into robot? $gearsLoadedInRobot";
     print "<p> Gears passed into airship? $gearsPassedInAirship </p>";
     
     if(($leftPeg === "1") or ($rightPeg === "1") or ($centerPeg === "1"))
