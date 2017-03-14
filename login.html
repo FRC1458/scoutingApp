@@ -12,17 +12,43 @@
     filter:hue-rotate(8deg);
 }
         </style>
+
+        <script>
+            // Form validation code -- this makes the whole user experience slightly more efficient
+            function preSubmit() { 
+                if(password.value == "" || password.value == null) {
+                    setTimeout(function() {alert("Please enter a password!"); }, 10);
+                    return false;
+                }
+
+
+                if(firstname.value == "" || firstname.value == null) {
+                    setTimeout(function() {alert("Please enter a first name!"); }, 10);
+                    return false;
+                }
+
+
+                if(lastname.value == "" || lastname.value == null) {
+                    setTimeout(function() {alert("Please enter a last name!"); }, 10);
+                    return false;
+                }
+                return true;
+            }
+        </script>
+
 <body>
     <div></div>
     <header> Login for Scouting </header>
-        <form action = "verifyLogin.php" method = "POST">
+
+        <form action="verifyLogin.php" method ="POST" onsubmit="return preSubmit();">
             <div>  
                 <br>
-                Password: <input type="password" name = "password" value = "propwash">
+                <!-- Very important to not leave the credentials in the public-facing source code -->
+                Password: <input type="password" name = "password" id="password" value = "">
                 <br>
-                First Name: <input type="text" name = "firstname" value = "Esha">
+                First Name: <input type="text" name = "firstname" id="firstname" value = "">
                 <br>
-                Last Name: <input type="text" name = "lastname" value = "Vaishnav">
+                Last Name: <input type="text" name = "lastname" id="lastname" value = "">
                 <br>
                 
                 <button> Submit </button>
