@@ -1,32 +1,5 @@
 <?PHP
-    $competitionList =  $_POST['competitions'];
-    $teamStatsList = $_POST['teamStats'];
-    $sortBy = $_POST['sortBy'];
-    
-     if(!empty($competitionList))
-    {
-        print "<p> <b> Competitions:  </b>";
-        foreach($competitionList as $tempmp)
-        {
-            print "  ";
-            print $tempmp;
-        }
-    }
-     if(!empty($teamStatsList))
-    {
-        print "  <b> Stats shown:  </b>";
-        foreach($teamStatsList as $tempmp)
-        {
-            print "  ";
-            print $tempmp;
-        }
-    }
-    print "  <b> Sorted by: $sortBy  </b></p>";
-    /*
-     * Depending on values above, get list of teams from database & display it in table format (alphabetical or
-     * stat) w/ clickable links for viewing detailed reports TO DO
-     */
-    // first open connection
+
     $servername = "localhost";
     $username = "esha";
     $password = "esha1234";
