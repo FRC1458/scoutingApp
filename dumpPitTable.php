@@ -17,12 +17,13 @@ print "<p> TEST </p>";
     
 ?>
 <html>
-    <link  rel="stylesheet" type="text/css" href="css/style.css" />
+    <link  rel="stylesheet" type="text/css" href="dumpMatchTable.css" />
    <body>
  
   <?PHP
 
     if ($result -> num_rows > 0) {
+         echo '<table cellpadding="0" cellspacing="0" class="db-table">';
          print "<p> <font size = 5> <center> Pit Report Table </center> </font> <table>
                 <tr> <th> Team Number </th>
                 <th> Max Speed </th>

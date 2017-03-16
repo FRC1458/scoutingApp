@@ -1,6 +1,4 @@
 <?PHP
- echo "<link rel='stylesheet' type='text/css' href='dumpMatchTable.css />";
-
 
 print "<p> TEST </p>";
 
@@ -20,7 +18,12 @@ print "<p> TEST </p>";
     $sql = "SELECT * FROM " . $matchTable;
     
     $result = $conn->query($sql);
-    
+    ?>
+<html>
+    <link  rel="stylesheet" type="text/css" href="dumpMatchTable.css" />
+   <body>
+ 
+  <?PHP
     if ($result -> num_rows > 0) {
      echo '<table cellpadding="0" cellspacing="0" class="db-table">';
          print "<p> <font size = 5> <center> Match Report Table </center> </font> <table>
@@ -105,3 +108,6 @@ print "<p> TEST </p>";
     }
 
 ?>
+  </body>
+
+</html>
