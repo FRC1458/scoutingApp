@@ -3,52 +3,73 @@
     $username = "esha";
     $password = "esha1234";
     $dbname = "scoutDB";
-    $pitTable = "pitreporttable";
-    
+    $table = "v_teams";   
+    $teams = "1458, 123, 456";
+ 
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
         die("Connection: " . $conn->connect_error);
     }
-    $sql = "SELECT * FROM " . $pitTable;
+    $sql = "SELECT * FROM " . $table . "WHERE teamNumber in (" . ")";
     
     $result = $conn->query($sql);
-    
-    if ($result -> num_rows > 0) {
-         print "<p> <font size = 5> <center> Pit Report Table </center> </font> <table>
-                <tr> <th> Team Number </th> <th> Max Speed </th> <th> Low Goal </th> <th> High Goal</th> <th> Gears </th> <th> Reporter </th> <th> Report ID </th> </tr>";
-        while($row = $result -> fetch_assoc()) {
-            print "<tr> <td> <a href=\"showPitReport.php?reportID=" . $row['reportID'] ."\">" . $row['teamNumber'] . "</a> </td> <td>" . $row['maxSpeed'] . "</td> <td>" . $row['lowGoal'] . "</td> <td>" . $row['highGoal'] . "</td> <td>" . $row['capableOfGears'] . "</td> <td>" . $row['reporterFirstName'] . " " . $row['reporterLastName'] . "</td> <td>" . $row['reportID'] . "</td> </tr>";
-        }
-        print "</p> </table>";
-    } else {
-        echo "0 results";
-    }
-    $matchTable = "matchreporttable";
-    
-    $sql = "SELECT * FROM " . $matchTable;
-    
-    $result = $conn->query($sql);
-    
-    if ($result -> num_rows > 0) {
-         print "<p> <font size = 5> <center> Match Report Table </center> </font> <table>
-                <tr> <th> Team Number </th> <th> Competition </th> <th> Score </th> <th> Gears Passed </th> <th> Reporter </th> <th> Report ID </th> </tr>";
-        while($row = $result -> fetch_assoc()) {
-            print "<tr> <td> <a href=\"showMatchReport.php?reportID=" . $row['reportID'] ."\">" . $row['teamNumber'] . "</a> </td> <td> " . $row['competition'] . "</td> <td>" . $row['teamScore'] . "</td> <td>" . $row['gearsPassedInAirship'] . "</td> <td>" . $row['reporterFirstName' ] . " " . $row['reporterLastName'] . "</td> <td>" . $row['reportID'] . "</td> </tr>";
-        }
-        print "</p> </table>";
-    } else {
-        echo "0 results";
-    }
+   
+if ($result->num_rows > 0) {
+	echo "<div class=pretty>";
+	while($row = $result->fetch_assoc()) {
+	echo "<div>";
+	echo $row["teamNumber"] . ": " . $row["teamName"] . $row["competition"] . "<br />";
+	echo "Score: " . $row["avg_score"] . " dev " . $row["dev_score"];
+	echo "Rating: " . $row["avg_rating"] . " dev " . $row["dev_rating"];
+	echo "Strategy: " . $row["overallStrat];
+	echo "<h1>Climbing</h1>";
+	echo "Do Climb: " . $row["useClimb"];
+	echo "Climb Percent: " . $row["prop_climbRope"];
+	echo "Rope head time (actual,claimed): " . $row["avg_headRopeTime"] . "," . $row["claim_headRopeTime"];
+	echo "Rope grab time (actual,claimed): " . $row["avg_grabRopeTime"] . "," . $row["claim_grabRopeTime"];
+	echo "<h1>Gear</h1>";
+	echo "Do Gears: " . $row["useGear"];
+	echo "Gears passed: " . $row["avg_gearsPassed"] . " dev " . $row["dev_gearsPassed"];
+	echo "Percent matches pick up gear: " . $row["prop_pickUp"]
+	echo "Peg use proportion: lrc: " . $row["prop_leftPeg"] . " " . $row["prop_rightPeg"] . " " . $row["prop_centrePeg"];
+	echo "Peg claim proportion: lrc: " . $row["claim_leftPeg"] . " " . $row["claim_rightPeg"] . " " . $row[claim_centrePeg"];
+	echo "<h1>Shooter</h1>";
+	echo "Do Shooter: " . $row["useShooter"];
+	echo "Shooter rating: " . $row["avg_shooterRating"];
+	echo "Claimed balls per sec: " . $row["claim_ballsPerPerson"];
+	echo "Ball storage: " . $row["claim_ballStorage"];
+	echo "Need shooter place: " . $row["prop_shooterPlace"];
+	echo "Shooter place: " . $row["shootingPlace"];
+	echo "<h1>Drive</h1>";
+	echo "Drive Type: " . $row["driveType"];
+	echo "Max Speed feet per second: " . $row["maxSpeed"];
+	echo "Number of Wheels: " . $row["numWheels"];
+	echo "Has Transmission: " . $row["hasTransmission"];
+	echo "<h1>Autonomous</h1>";
+	echo "Has Auto: " . $row["useAuto"];
+	echo "Percent cross: " . $row["prop_autoCross"];
+	echo "Percent gear: " . $row["prop_autoGear"];
+	echo "Percent hopper: " . $row["prop_autoHopper"];
+	echo "Claim hopper: " . $row["claim_autoHopper"];
+	echo "Claim cross: " . $row["claim_autoCross"];
+	echo "Claim gear: " . $row["claim_autoGear"];
+	echo "Claim high goal: " . $row["claim_autoHigh"];
+	echo "Claim low goal: " . $row["claim_autoLow"];
+	echo "<h1>Strategy And Defence</h1>";
+	echo "Percent susceptible to defence: " . $row["avg_susceptibleDefence"];
+	echo "Plan nuclear: " . $row["claim_nuclear"];
+	echo "Percent use nuclear: " . $row["prop_nuclear"];
+	echo "Plan defence: " . $row["claim_defence"];
+	echo "Percent do defence: " . $row["prop_defence"];
+	echo "<h1>Comments</h1>";
+	echo "Pit: " . $row["pitComments"];
+	echo "Match: " . $row["matchComments"];
+	echo "</div>";				
+	}
+echo "</div>"
+} 
     
     $conn->close();
-    
-    
-    # Team name, team competition, team score, robot speed, # of balls in low/high goal,
-    # Number of gears loaded into airship
-//    print "<p> <table>
-//    <tr> <th> Team Number </th> <th> Team Comp </th> <th> Team Score </th> <th> Robot Speed </th> <th> Balls Low Goal </th> <th> Balls High Goal </th> <th> Gears Loaded </th> <th> Pit/Match </th> <th> Reporter </th> <th> Report ID </th> </tr>
-//    <tr> <td> <a href=\"showMatchReport.php?reportID=3\"> 1458 </a> </td> <td> Competition X </td> <td> 120 </td> <td> 14 mph </td> <td> 15 </td> <td> 12 </td> <td> 5 </td> <td> Match </td> <td> AB </td> <td> 3 </td> </tr>
-//    <tr> <td> <a href=\"showPitReport.php?reportID=14\"> 1478 </a> </td> <td> Competition X </td> <td> 180 </td> <td> 14 mph </td> <td> 17 </td> <td> 22 </td> <td> 10 </td> <td> Pit </td> <td> CD </td> <td> 14 </td> </tr> </table> </p>";
     
     
 ?>
