@@ -1,5 +1,4 @@
 <?PHP
-echo "<link rel='stylesheet' type='text/css' href='dumpMatchTable.css />";
     $servername = "localhost";
     $username = "esha";
     $password = "esha1234";
