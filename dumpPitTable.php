@@ -1,5 +1,4 @@
 <?PHP
-echo "<link rel='stylesheet' type='text/css' href='dumpMatchTable.css />";
 
 print "<p> TEST </p>";
     $servername = "localhost";
@@ -7,7 +6,7 @@ print "<p> TEST </p>";
     $password = "esha1234";
     $dbname = "scoutDB";
     $pitTable = "pitreporttable";
-    
+
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
         die("Connection: " . $conn->connect_error);
@@ -16,6 +15,13 @@ print "<p> TEST </p>";
     
     $result = $conn->query($sql);
     
+?>
+<html>
+    <link  rel="stylesheet" type="text/css" href="css/style.css" />
+   <body>
+ 
+  <?PHP
+
     if ($result -> num_rows > 0) {
          print "<p> <font size = 5> <center> Pit Report Table </center> </font> <table>
                 <tr> <th> Team Number </th>
@@ -106,3 +112,6 @@ print "<p> TEST </p>";
     
 
 ?>
+         </body>
+
+</html>

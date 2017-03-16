@@ -35,7 +35,7 @@ a{
     color:#c41717;
 }
 
-table {
+table.db-table {
 color: #333;
 font-family: Helvetica, Arial, sans-serif;
 width: 1000px;
@@ -43,24 +43,24 @@ border-collapse:
 collapse; border-spacing: 0;
 }
 
-td, th {
+table.db-table td, th {
 border: 1px solid transparent; /* No more visible border */
 height: 30px;
 transition: all 0.3s; /* Simple transition for hover effect */
 }
 
-th {
+table.db-table th {
 background: #DFDFDF; /* Darken header a bit */
 font-weight: bold;
 }
 
-td {
+table.db-table td {
 background: #FAFAFA;
 text-align: center;
 }
 
 
-tr td:nth-child(2n) { background: #F1F1F1; }
+table.db-table tr td:nth-child(2n) { background: #F1F1F1; }
 
 
-tr td:hover { background: #666; color: #FFF; } /* Hover cell effect! */
+table.db-table tr td:hover { background: #666; color: #FFF; } /* Hover cell effect! */
