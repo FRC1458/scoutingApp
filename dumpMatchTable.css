@@ -1,0 +1,66 @@
+body{
+    background-color:#c41717;
+}
+header{
+    text-decoration:underline;
+    font-size:50px;
+    text-align:center;
+    color:#282828;
+    font-family:Georgia, serif;
+    padding-bottom:30px;
+    -webkit-transition-duration:1s;
+    transition-duration:1s;
+}
+
+button{
+    color:#c41717;
+    font-family:Georgia, serif;
+    font-size:18px;
+    padding:5px 25px;
+    text-align: center;
+    position:relative;
+    top:30px;
+    text-decoration:underline;
+    border-radius:10%;
+    background-color:#282828;
+    border-color:#282828;
+    -webkit-transition-duration:0.4s;
+    transition-duration:0.4s;
+}
+button:hover{
+    background-color:white;
+    border-color:white
+}
+a{
+    color:#c41717;
+}
+
+table {
+color: #333;
+font-family: Helvetica, Arial, sans-serif;
+width: 1000px;
+border-collapse:
+collapse; border-spacing: 0;
+}
+
+td, th {
+border: 1px solid transparent; /* No more visible border */
+height: 30px;
+transition: all 0.3s; /* Simple transition for hover effect */
+}
+
+th {
+background: #DFDFDF; /* Darken header a bit */
+font-weight: bold;
+}
+
+td {
+background: #FAFAFA;
+text-align: center;
+}
+
+
+tr td:nth-child(2n) { background: #F1F1F1; }
+
+
+tr td:hover { background: #666; color: #FFF; } /* Hover cell effect! */
