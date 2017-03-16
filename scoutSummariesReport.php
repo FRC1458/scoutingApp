@@ -3,8 +3,8 @@
     $username = "esha";
     $password = "esha1234";
     $dbname = "scoutDB";
-    $table = "v_teams";   
-    $teams = "1458, 123, 456";
+    $table = "v_teams";
+    $teams = $_POST["teamNumber1"] . ", " . $_POST["teamNumber2"] . ", " . $_POST["teamNumber3"];   
  
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
