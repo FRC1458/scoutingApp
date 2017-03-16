@@ -17,7 +17,7 @@ print "<p> TEST </p>";
     
 ?>
 <html>
-    <link  rel="stylesheet" type="text/css" href="css/style.css" />
+    <link  rel="stylesheet" type="text/css" href="dumpMatchTable.css" />
    <body>
  
   <?PHP
