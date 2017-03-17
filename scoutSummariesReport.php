@@ -21,8 +21,8 @@ if ($result->num_rows > 0) {
 	echo $row["teamNumber"] . ": " . $row["teamName"] . $row["competition"] . "<br />";
 	echo "Score: " . $row["avg_score"] . " dev " . $row["dev_score"];
 	echo "Rating: " . $row["avg_rating"] . " dev " . $row["dev_rating"];
-	echo "Strategy: " . $row["overallStrat];
-	echo "<h1>Climbing</h1>";
+	echo "Strategy: " . $row["overallStrat"];
+	echo "<h1> Climbing </h1>";
 	echo "Do Climb: " . $row["useClimb"];
 	echo "Climb Percent: " . $row["prop_climbRope"];
 	echo "Rope head time (actual,claimed): " . $row["avg_headRopeTime"] . "," . $row["claim_headRopeTime"];
