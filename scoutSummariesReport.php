@@ -37,7 +37,7 @@
    <body>
 	   <?PHP
 if ($result->num_rows > 0) {
-	print "<div class=pretty style = \"float:left\">";
+	print "<div class=pretty id = "left" style = \"float:left\">";
 	while($row = $result->fetch_assoc()) {
 		print "<div><table><td>";
 		
