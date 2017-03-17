@@ -5,8 +5,8 @@
     $dbname = "scoutDB";
     $table = "v_teams";
     $teams = $_POST["teamNumber1"] . ", " . $_POST["teamNumber2"] . ", " . $_POST["teamNumber3"];
-log_errors;
-display_errors;
+#log_errors;
+#display_errors;
  
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
