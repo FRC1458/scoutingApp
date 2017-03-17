@@ -29,7 +29,7 @@ if ($result->num_rows > 0) {
 		
 		print "<tr> <td>Strategy: </td><td>" . $row["overallStrat"] . "</td></tr>";
 		
-		print "<th> <h1>Climbing</h1> </th>";
+		#print "<th> <h1>Climbing</h1> </th>";
 		
 		print "<tr> <td>Do Climb: </td><td>" . $row["useClimb"] . "</td></tr>";
 		
@@ -39,7 +39,7 @@ if ($result->num_rows > 0) {
 		
 		print "<tr> <td>Rope grab time (actual,claimed): </td><td>" . $row["avg_grabRopeTime"] . "</td><td>" . $row["claim_grabRopeTime"] . "</td></tr>";
 		
-		print "	<th> <h1>Gear</h1> </th>";
+		#print "	<th> <h1>Gear</h1> </th>";
 		
 		print "<tr><td> Do Gears: </td><td>" . $row["useGear"] . "</td></tr>";
 		
@@ -51,7 +51,7 @@ if ($result->num_rows > 0) {
 		
 		print "<tr> <td>Peg claim proportion: lrc: </td><td>" . $row["claim_leftPeg"] . "</td><td> " . $row["claim_rightPeg"] . " </td><td>" . $row["claim_centrePeg"] . "</td></tr>";
 		
-		print "<th> <h1>Shooter</h1> </th>";
+		#print "<th> <h1>Shooter</h1> </th>";
 		
 		print "<tr><td> Do Shooter: </td><td>" . $row["useShooter"] . "</td></tr>";
 		
@@ -65,7 +65,7 @@ if ($result->num_rows > 0) {
 		
 		print "<tr> <td>Shooter place: </td><td>" . $row["shootingPlace"] . "</td></tr>";
 		
-		print "<th><h1>Drive</h1> </th>";
+		#print "<th><h1>Drive</h1> </th>";
 		
 		print "<tr> <td>Drive Type: </td><td>" . $row["driveType"] . "</td></tr>";
 		
@@ -75,7 +75,7 @@ if ($result->num_rows > 0) {
 		
 		print "<tr><td> Has Transmission:</td><td> " . $row["hasTransmission"] . "</td></tr>";
 		
-		print "<th><h1>Autonomous</h1></th>";
+		#print "<th><h1>Autonomous</h1></th>";
 		
 		print "<tr> <td>Has Auto: </td><td>" . $row["useAuto"] . "</td></tr>";
 		
@@ -95,7 +95,7 @@ if ($result->num_rows > 0) {
 		
 		print "<tr> <td>Claim low goal: </td><td>" . $row["claim_autoLow"] . "</td></tr>";
 		
-		print "<th> <h1>Strategy And Defence</h1> </th>";
+		#print "<th> <h1>Strategy And Defence</h1> </th>";
 		
 		print "<tr> <td>Percent susceptible to defence: </td><td>" . $row["avg_susceptibleDefence"] . "</td></tr>";
 		
@@ -107,7 +107,7 @@ if ($result->num_rows > 0) {
 		
 		print "<tr> <td>Percent do defence: </td><td>" . $row["prop_defence"] . "</td></tr>";
 		
-		print "<th> <h1>Comments</h1> </th>";
+		#print "<th> <h1>Comments</h1> </th>";
 		
 		print "<tr> <td>Pit: </td><td>" . $row["pitComments"] . "</td></tr>";
 		
