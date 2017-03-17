@@ -37,7 +37,7 @@
    <body>
 	   <?PHP
 if ($result->num_rows > 0) {
-	print "<div class=pretty>";
+	print "<div class=pretty style = \"float:left\">";
 	while($row = $result->fetch_assoc()) {
 		print "<div><table><td>";
 		
@@ -127,7 +127,7 @@ if ($result->num_rows > 0) {
 		
 		print "<tr> <td>Percent do defence: </td><td>" . $row["prop_defence"] . "</td><td></td><td></td></tr>";
 		
-		#print "<th> <h1>Comments</h1> </th>";
+		#print "<tr><th> <h1>Comments</h1> </th></tr>";
 		
 		print "<tr> <td>Pit: </td><td>" . $row["pitComments"] . "</td><td></td><td></td></tr>";
 		
