@@ -45,7 +45,7 @@ if ($result->num_rows > 0) {
 		}
 		else if($counter = 1){
 			print "<div align = \"center\" id = \"center\" style = \"float:left;width = 25%\"><table><td>";
-		}else{
+		}else if ($counter = 2){
 			print "<div align = \"right\" id = \"right\" style = \"float:left;width = 25%\"><table><td>";
 			
 		}
