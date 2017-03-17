@@ -50,7 +50,7 @@ if ($result->num_rows > 0) {
 			
 		}
 		print $counter; 
-		$counter++; 
+		$counter = $counter + 1; 
 		
 		print "<th>" . $row["teamNumber"] . ": " . $row["teamName"] . $row["competition"] . "<td></td><td></td></th>";
 		
