@@ -12,7 +12,7 @@ display_errors;
     if ($conn->connect_error) {
         die("Connection: " . $conn->connect_error);
     }
-    $sql = "SELECT * FROM " . $table . "WHERE teamNumber IN (". $teams .")";
+    $sql = "SELECT * FROM " . $table . " WHERE teamNumber IN (". $teams .")";
  error_log($sql);
     $result = $conn->query($sql);
    error_log($result);
