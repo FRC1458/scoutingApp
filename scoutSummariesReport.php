@@ -49,6 +49,7 @@ if ($result->num_rows > 0) {
 			print "<div align = \"right\" id = \"right\" style = \"float:left;width = 25%\"><table><td>";
 			
 		}
+		print $counter; 
 		
 		print "<th>" . $row["teamNumber"] . ": " . $row["teamName"] . $row["competition"] . "<td></td><td></td></th>";
 		
