@@ -37,9 +37,9 @@
    <body>
 	   <?PHP
 if ($result->num_rows > 0) {
-	print "<div class=pretty id = "left" style = \"float:left\">";
+	print "<div class=pretty>";
 	while($row = $result->fetch_assoc()) {
-		print "<div><table><td>";
+		print "<div style = \"float:left;width = 25%\"><table><td>";
 		
 		print "<th>" . $row["teamNumber"] . ": " . $row["teamName"] . $row["competition"] . "<td></td><td></td></th>";
 		
