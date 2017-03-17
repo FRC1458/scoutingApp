@@ -66,7 +66,7 @@ if ($result->num_rows > 0) {
 		print "<p> Match: " . $row["matchComments"] . "</p>";
 		print "</div>";				
 	}
-print "</div>"
+print "</div>";
 } 
     
     $conn->close();
