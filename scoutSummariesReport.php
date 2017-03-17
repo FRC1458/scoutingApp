@@ -38,7 +38,7 @@
    <body>
 	   <?PHP
 if ($result->num_rows > 0) {
-	print "<div class=pretty id = \"container\" style = \"text-align:center\">";
+	print "<div class=pretty style = \"text-align:center\">";
 	while($row = $result->fetch_assoc()) {
 		if($counter == 0 ){
 			print "<div id = \"left\" style = \"vertical-align:top; float:left; width = 100px\"><table><td>";
