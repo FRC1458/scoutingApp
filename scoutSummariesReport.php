@@ -1,7 +1,7 @@
 <?PHP
     $servername = "localhost";
-    $username = "esha";
-    $password = "esha1234";
+    $username = "root";
+    $password = "cookies";
     $dbname = "scoutDB";
     $table = "v_teams";
     $teams = $_POST["teamNumber1"] . ", " . $_POST["teamNumber2"] . ", " . $_POST["teamNumber3"];   
