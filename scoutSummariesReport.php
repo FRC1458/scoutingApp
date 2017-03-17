@@ -31,9 +31,11 @@
 #    border: solid;
 #}
 #</style>
+?>
 <html>
     <link  rel="stylesheet" type="text/css" href="dumpMatchTable.css" />
    <body>
+	   <?PHP
 if ($result->num_rows > 0) {
 	print "<div class=pretty>";
 	while($row = $result->fetch_assoc()) {
