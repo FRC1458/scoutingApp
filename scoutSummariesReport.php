@@ -33,7 +33,7 @@
 #</style>
 ?>
 <html>
-    <link  rel="stylesheet" type="text/css" href="dumpMatchTable.css" />
+    <link  rel="stylesheet" type="text/css" href="matchScoutingReportPage.css" />
    <body>
 	   <?PHP
 if ($result->num_rows > 0) {
