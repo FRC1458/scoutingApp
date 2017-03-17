@@ -41,12 +41,12 @@ if ($result->num_rows > 0) {
 	print "<div class=pretty id = \"container\" style = \"position:relative; width:100%\">";
 	while($row = $result->fetch_assoc()) {
 		if($counter == 0 ){
-			print "<div align = \"left\" id = \"left\" style = \"float:left; width = 25%; position:absolute\"><table><td>";
+			print "<div id = \"left\" style = \"float:left; width = 25%\"><table><td>";
 		}
 		else if($counter == 1){
-			print "<div align = \"center\" id = \"center\" style = \"float:left; width = 25%; position:relative\"><table><td>";
+			print "<div id = \"middle\" style = \"float:left; width = 50%\"><table><td>";
 		}else if ($counter == 2){
-			print "<div align = \"right\" id = \"right\" style = \"float:left; width = 25%; position:absolute\"><table><td>";
+			print "<div id = \"right\" style = \"float:left; width = 25%\"><table><td>";
 			
 		}
 		print $counter; 
