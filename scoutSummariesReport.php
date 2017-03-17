@@ -5,6 +5,7 @@
     $dbname = "scoutDB";
     $table = "v_teams";
     $teams = $_POST["teamNumber1"] . ", " . $_POST["teamNumber2"] . ", " . $_POST["teamNumber3"];
+	$counter = 0; 
 #log_errors;
 #display_errors;
  
@@ -39,7 +40,15 @@
 if ($result->num_rows > 0) {
 	print "<div class=pretty>";
 	while($row = $result->fetch_assoc()) {
-		print "<div style = \"float:left;width = 25%\"><table><td>";
+		if(counter == 0 ){
+			print "<div id = \"left\" style = \"float:left;width = 25%\"><table><td>";
+		}
+		else if(counter = 1){
+			print "<div id = \"center\" style = \"float:left;width = 25%\"><table><td>";
+		}else{
+			print "<div id = \"right\" style = \"float:left;width = 25%\"><table><td>";
+			
+		}
 		
 		print "<th>" . $row["teamNumber"] . ": " . $row["teamName"] . $row["competition"] . "<td></td><td></td></th>";
 		
@@ -133,7 +142,8 @@ if ($result->num_rows > 0) {
 		
 		print "<tr> <td>Match: </td><td>" . $row["matchComments"] . "</td><td></td><td></td></tr>";
 		
-		print "</div></table></td>";				
+		print "</div></table></td>";	
+		$counter++; 
 	}
 	
 print "</div>";
