@@ -13,9 +13,9 @@ display_errors;
         die("Connection: " . $conn->connect_error);
     }
     $sql = "SELECT * FROM " . $table . " WHERE teamNumber IN (". $teams .")";
- error_log($sql);
+ 
     $result = $conn->query($sql);
-   error_log($result);
+
 if ($result->num_rows > 0) {
 	print "<div class=pretty>";
 	while($row = $result->fetch_assoc()) {
