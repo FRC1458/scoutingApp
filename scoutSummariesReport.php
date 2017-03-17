@@ -53,7 +53,7 @@ if ($result->num_rows > 0) {
 		
 		print "<tr> <td>Do Climb: </td><td>" . $row["useClimb"] . "</td><td></td><td></td></tr>";
 		
-		print "<tr> Climb Percent: <td>" . $row["prop_climbRope"] . "</td><td></td><td></td></tr>";
+		print "<tr> <td>Climb Percent: </td><td>" . $row["prop_climbRope"] . "</td></td><td></td></tr>";
 		
 		print "<tr> <td>Rope head time (actual,claimed): </td><td>" . $row["avg_headRopeTime"] . "</td><td>" . $row["claim_headRopeTime"] . "</td><td></td></tr>";
 		
