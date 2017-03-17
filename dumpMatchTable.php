@@ -17,7 +17,7 @@
     $result = $conn->query($sql);
     ?>
 <html>
-    <link  rel="stylesheet" type="text/css" href="matchScoutingReport.css" />
+    <link  rel="stylesheet" type="text/css" href="dumpMatchTable.css" />
    <body>
  
   <?PHP
