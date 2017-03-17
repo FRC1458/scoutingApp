@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
 	echo "<h1>Gear</h1>";
 	echo "Do Gears: " . $row["useGear"];
 	echo "Gears passed: " . $row["avg_gearsPassed"] . " dev " . $row["dev_gearsPassed"];
-	echo "Percent matches pick up gear: " . $row["prop_pickUp"]
+	echo "Percent matches pick up gear: " . $row["prop_pickUp"];
 	echo "Peg use proportion: lrc: " . $row["prop_leftPeg"] . " " . $row["prop_rightPeg"] . " " . $row["prop_centrePeg"];
 	echo "Peg claim proportion: lrc: " . $row["claim_leftPeg"] . " " . $row["claim_rightPeg"] . " " . $row[claim_centrePeg"];
 	echo "<h1>Shooter</h1>";
