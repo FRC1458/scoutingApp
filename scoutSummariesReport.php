@@ -118,10 +118,7 @@ if ($result->num_rows > 0) {
 	
 print "</div>";
 } 
-<!DOCTYPE HTML>
-<table style = "width: 100%">
-<tr>
-	<th>
+
 
     
     $conn->close();
