@@ -20,54 +20,102 @@ if ($result->num_rows > 0) {
 	print "<div class=pretty>";
 	while($row = $result->fetch_assoc()) {
 		print "<div><table><td>";
-		print "<p>" . $row["teamNumber"] . ": " . $row["teamName"] . $row["competition"] . "</p>";
-		print "<p>" . "Score: " . $row["avg_score"] . " dev " . $row["dev_score"] . "</p>";
-		print "<p> Rating: " . $row["avg_rating"] . " dev " . $row["dev_rating"] . "</p>";
-		print "<p> Strategy: " . $row["overallStrat"] . "</p>";
-		print "<p> <h1>Climbing</h1> </p>";
-		print "<p> Do Climb: " . $row["useClimb"] . "</p>";
-		print "<p> Climb Percent: " . $row["prop_climbRope"] . "</p>";
-		print "<p> Rope head time (actual,claimed): " . $row["avg_headRopeTime"] . "," . $row["claim_headRopeTime"] . "</p>";
-		print "<p> Rope grab time (actual,claimed): " . $row["avg_grabRopeTime"] . "," . $row["claim_grabRopeTime"] . "</p>";
-		print "	<p> <h1>Gear</h1> </p>";
-		print "<p> Do Gears: " . $row["useGear"] . "</p>";
-		print "<p> Gears passed: " . $row["avg_gearsPassed"] . " dev " . $row["dev_gearsPassed"] . "</p>";
-		print "<p> Percent matches pick up gear: " . $row["prop_pickUp"] . "</p>";
-		print "<p> Peg use proportion: lrc: " . $row["prop_leftPeg"] . " " . $row["prop_rightPeg"] . " " . $row["prop_centrePeg"] . "<p>";
-		print "<p> Peg claim proportion: lrc: " . $row["claim_leftPeg"] . " " . $row["claim_rightPeg"] . " " . $row["claim_centrePeg"] . "</p>";
-		print "<p> <h1>Shooter</h1> </p>";
-		print "<p> Do Shooter: " . $row["useShooter"] . "</p>";
-		print "<p> Shooter rating: " . $row["avg_shooterRating"] . "</p>";
-		print "<p> Claimed balls per sec: " . $row["claim_ballsPerPerson"] . "</p>";
-		print "<p> Ball storage: " . $row["claim_ballStorage"] . "</p>";
-		print "<p> Need shooter place: " . $row["prop_shooterPlace"] . "</p>";
-		print "<p> Shooter place: " . $row["shootingPlace"] . "</p>";
-		print "<p><h1>Drive</h1> </p>";
-		print "<p> Drive Type: " . $row["driveType"] . "</p>";
-		print "<p> Max Speed feet per second: " . $row["maxSpeed"] . "</p>";
-		print "<p> Number of Wheels: " . $row["numWheels"] . "</p>";
-		print "<p> Has Transmission: " . $row["hasTransmission"] . "</p>";
-		print "<p><h1>Autonomous</h1></p>";
-		print "<p> Has Auto: " . $row["useAuto"] . "</p>";
-		print "<p> Percent cross: " . $row["prop_autoCross"] . "</p>";
-		print "<p> Percent gear: " . $row["prop_autoGear"] . "</p>";
-		print "<p> Percent hopper: " . $row["prop_autoHopper"] . "</p>";
-		print "<p> Claim hopper: " . $row["claim_autoHopper"] . "</p>";
-		print "<p> Claim cross: " . $row["claim_autoCross"] . "</p>";
-		print "<p> Claim gear: " . $row["claim_autoGear"] . "</p>";
-		print "<p> Claim high goal: " . $row["claim_autoHigh"] . "</p>";
-		print "<p> Claim low goal: " . $row["claim_autoLow"] . "</p>";
-		print "<p> <h1>Strategy And Defence</h1> </p>";
-		print "<p> Percent susceptible to defence: " . $row["avg_susceptibleDefence"] . "</p>";
-		print "<p> Plan nuclear: " . $row["claim_nuclear"] . "</p>";
-		print "<p> Percent use nuclear: " . $row["prop_nuclear"] . "</p>";
-		print "<p> Plan defence: " . $row["claim_defence"] . "</p>";
-		print "<p> Percent do defence: " . $row["prop_defence"] . "</p>";
-		print "<p> <h1>Comments</h1> </p>";
-		print "<p> Pit: " . $row["pitComments"] . "</p>";
-		print "<p> Match: " . $row["matchComments"] . "</p>";
+		
+		print "<th>" . $row["teamNumber"] . ": " . $row["teamName"] . $row["competition"] . "</th>";
+		
+		print "<tr> <td>" . "Score: " . $row["avg_score"] . "</td> dev <td>" . $row["dev_score"] . "</td></tr>";
+		
+		print "<tr> <td>Rating: " . $row["avg_rating"] . "</td> dev <td>" . $row["dev_rating"] . "</td></tr>";
+		
+		print "<tr> <td>Strategy: </td><td>" . $row["overallStrat"] . "</td></tr>";
+		
+		print "<th> <h1>Climbing</h1> </th>";
+		
+		print "<tr> <td>Do Climb: </td><td>" . $row["useClimb"] . "</td></tr>";
+		
+		print "<tr> Climb Percent: " . $row["prop_climbRope"] . "</tr>";
+		
+		print "<tr> <td>Rope head time (actual,claimed): </td><td>" . $row["avg_headRopeTime"] . "</td><td>" . $row["claim_headRopeTime"] . "</td></tr>";
+		
+		print "<tr> <td>Rope grab time (actual,claimed): </td><td>" . $row["avg_grabRopeTime"] . "</td><td>" . $row["claim_grabRopeTime"] . "</td></tr>";
+		
+		print "	<th> <h1>Gear</h1> </th>";
+		
+		print "<tr><td> Do Gears: </td><td>" . $row["useGear"] . "</td></tr>";
+		
+		print "<tr> <td>Gears passed: </td><td>" . $row["avg_gearsPassed"] . "</td> dev <td>" . $row["dev_gearsPassed"] . "</td></tr>";
+		
+		print "<tr> <td>Percent matches pick up gear: </td><td>" . $row["prop_pickUp"] . "</td></tr>";
+		
+		print "<tr><td> Peg use proportion: lrc: </td><td>" . $row["prop_leftPeg"] . "</td><td> " . $row["prop_rightPeg"] . "</td><td> " . $row["prop_centrePeg"] . "</td><tr>";
+		
+		print "<tr> <td>Peg claim proportion: lrc: </td><td>" . $row["claim_leftPeg"] . "</td><td> " . $row["claim_rightPeg"] . " </td><td>" . $row["claim_centrePeg"] . "</td></tr>";
+		
+		print "<th> <h1>Shooter</h1> </th>";
+		
+		print "<tr><td> Do Shooter: </td><td>" . $row["useShooter"] . "</td></tr>";
+		
+		print "<tr> <td>Shooter rating: </td><td>" . $row["avg_shooterRating"] . "</td></tr>";
+		
+		print "<tr> <td>Claimed balls per sec: </td><td>" . $row["claim_ballsPerPerson"] . "</td></tr>";
+		
+		print "<tr> <td>Ball storage:</td><td> " . $row["claim_ballStorage"] . "</td></tr>";
+		
+		print "<tr> <td>Need shooter place:</td><td> " . $row["prop_shooterPlace"] . "</td></tr>";
+		
+		print "<tr> <td>Shooter place: </td><td>" . $row["shootingPlace"] . "</td></tr>";
+		
+		print "<th><h1>Drive</h1> </th>";
+		
+		print "<tr> <td>Drive Type: </td><td>" . $row["driveType"] . "</td></tr>";
+		
+		print "<tr><td> Max Speed feet per second: </td><td>" . $row["maxSpeed"] . "</td></tr>";
+		
+		print "<tr> <td>Number of Wheels: </td><td>" . $row["numWheels"] . "</td></tr>";
+		
+		print "<tr><td> Has Transmission:</td><td> " . $row["hasTransmission"] . "</td></tr>";
+		
+		print "<th><h1>Autonomous</h1></th>";
+		
+		print "<tr> <td>Has Auto: </td><td>" . $row["useAuto"] . "</td></tr>";
+		
+		print "<tr> <td>Percent cross: </td><td>" . $row["prop_autoCross"] . "</td></tr>";
+		
+		print "<tr> <td>Percent gear: </td><td>" . $row["prop_autoGear"] . "</td></tr>";
+		
+		print "<tr> <td>Percent hopper: </td><td>" . $row["prop_autoHopper"] . "</td></tr>";
+		
+		print "<tr> <td>Claim hopper: </td><td>" . $row["claim_autoHopper"] . "</td></tr>";
+		
+		print "<tr><td> Claim cross: </td><td>" . $row["claim_autoCross"] . "</td></tr>";
+		
+		print "<tr> <td>Claim gear: </td><td>" . $row["claim_autoGear"] . "</td></tr>";
+		
+		print "<tr> <td>Claim high goal: </td><td>" . $row["claim_autoHigh"] . "</td></tr>";
+		
+		print "<tr> <td>Claim low goal: </td><td>" . $row["claim_autoLow"] . "</td></tr>";
+		
+		print "<th> <h1>Strategy And Defence</h1> </th>";
+		
+		print "<tr> <td>Percent susceptible to defence: </td><td>" . $row["avg_susceptibleDefence"] . "</td></tr>";
+		
+		print "<tr> <td>Plan nuclear: </td><td>" . $row["claim_nuclear"] . "</td></tr>";
+		
+		print "<tr> <td>Percent use nuclear: </td><td>" . $row["prop_nuclear"] . "</td></tr>";
+		
+		print "<tr> <td>Plan defence: </td><td>" . $row["claim_defence"] . "</td></tr>";
+		
+		print "<tr> <td>Percent do defence: </td><td>" . $row["prop_defence"] . "</td></tr>";
+		
+		print "<th> <h1>Comments</h1> </th>";
+		
+		print "<tr> <td>Pit: </td><td>" . $row["pitComments"] . "</td></tr>";
+		
+		print "<tr> <td>Match: </td><td>" . $row["matchComments"] . "</td></tr>";
+		
 		print "</div></table></td>";				
 	}
+	
 print "</div>";
 } 
 <!DOCTYPE HTML>
