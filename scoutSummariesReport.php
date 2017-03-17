@@ -16,21 +16,21 @@
  
     $result = $conn->query($sql);
 
-<style>
-th {
-    background-color: black;
-    color: red;
-}
-
-tr {
-    background-color: red;
-    color: black;
-}
-
-td, th {
-    border: solid;
-}
-</style>
+#<style>
+#th {
+#    background-color: black;
+#    color: red;
+#}
+#
+#tr {
+#    background-color: red;
+#    color: black;
+#}
+#
+#table {
+#    border: solid;
+#}
+#</style>
 
 if ($result->num_rows > 0) {
 	print "<div class=pretty>";
