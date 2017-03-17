@@ -10,7 +10,7 @@
     if ($conn->connect_error) {
         die("Connection: " . $conn->connect_error);
     }
-    $sql = "SELECT * FROM " . $table . WHERE teamNumber in (" . ");
+    $sql = "SELECT * FROM " . $table . "WHERE teamNumber IN (". $teams .")";
     
     $result = $conn->query($sql);
    
