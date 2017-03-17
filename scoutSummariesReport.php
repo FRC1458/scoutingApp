@@ -66,7 +66,7 @@ if ($result->num_rows > 0) {
 	echo "Match: " . $row["matchComments"];
 	echo "</div>";				
 	}
-echo "</div>"
+echo "</div>";
 } 
     
     $conn->close();
