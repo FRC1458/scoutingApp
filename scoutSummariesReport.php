@@ -38,15 +38,15 @@
    <body>
 	   <?PHP
 if ($result->num_rows > 0) {
-	print "<div class=pretty>";
+	print "<div class=pretty id = \"container\" style = \"width:100%\">";
 	while($row = $result->fetch_assoc()) {
 		if($counter == 0 ){
-			print "<div id = \"left\" style = \"float:left;width = 25%\"><table><td>";
+			print "<div id = \"left\" style = \"float:left;width = 33%\"><table><td>";
 		}
 		else if($counter = 1){
-			print "<div id = \"center\" style = \"float:left;width = 25%\"><table><td>";
+			print "<div id = \"center\" style = \"float:left;width = 34%\"><table><td>";
 		}else{
-			print "<div id = \"right\" style = \"float:left;width = 25%\"><table><td>";
+			print "<div id = \"right\" style = \"float:left;width = 33%\"><table><td>";
 			
 		}
 		
