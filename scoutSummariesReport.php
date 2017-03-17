@@ -44,9 +44,9 @@ if ($result->num_rows > 0) {
 			print "<div id = \"left\" style = \"vertical-align:top; float:left; margin: 0px; width = 100px\"><table><td>";
 		}
 		else if($counter == 1){
-			print "<div id = \"middle\" style = \"vertical-align:top; float:left; margin: 500px; float:left; width = 200px\"><table><td>";
+			print "<div id = \"middle\" style = \"vertical-align:top; float:left; margin: 400px; float:left; width = 200px\"><table><td>";
 		}else if ($counter == 2){
-			print "<div id = \"right\" style = \"vertical-align:top; float:left; margin: 1000px; width = 100px\"><table><td>";
+			print "<div id = \"right\" style = \"vertical-align:top; float:left; margin: 800px; width = 100px\"><table><td>";
 			
 		}
 		print $counter; 
