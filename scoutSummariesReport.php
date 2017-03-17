@@ -19,7 +19,7 @@
 if ($result->num_rows > 0) {
 	print "<div class=pretty>";
 	while($row = $result->fetch_assoc()) {
-		print "<div><table style="width:100%"><td>";
+		print "<div><table style="boarder:single", style="width:100%", style="color:blue;"><td>";
 		
 		print "<th>" . $row["teamNumber"] . ": " . $row["teamName"] . $row["competition"] . "</th>";
 		
