@@ -13,7 +13,7 @@
     $sql = "SELECT * FROM " . $table . "WHERE teamNumber IN (". $teams .")";
  
     $result = $conn->query($sql);
-   echo $result;
+   error_log($result);
 if ($result->num_rows > 0) {
 	print "<div class=pretty>";
 	while($row = $result->fetch_assoc()) {
