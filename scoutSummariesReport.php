@@ -19,7 +19,7 @@
 if ($result->num_rows > 0) {
 	print "<div class=pretty>";
 	while($row = $result->fetch_assoc()) {
-		print "<div>";
+		print "<div><table><td>";
 		print "<p>" . $row["teamNumber"] . ": " . $row["teamName"] . $row["competition"] . "</p>";
 		print "<p>" . "Score: " . $row["avg_score"] . " dev " . $row["dev_score"] . "</p>";
 		print "<p> Rating: " . $row["avg_rating"] . " dev " . $row["dev_rating"] . "</p>";
@@ -66,7 +66,7 @@ if ($result->num_rows > 0) {
 		print "<p> <h1>Comments</h1> </p>";
 		print "<p> Pit: " . $row["pitComments"] . "</p>";
 		print "<p> Match: " . $row["matchComments"] . "</p>";
-		print "</div>";				
+		print "</div></table></td>";				
 	}
 print "</div>";
 } 
