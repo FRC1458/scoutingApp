@@ -43,9 +43,9 @@ if ($result->num_rows > 0) {
 		if($counter == 0 ){
 			print "<div align = \"left\" id = \"left\" style = \"float:left; width = 25%; position:absolute\"><table><td>";
 		}
-		else if($counter = 1){
+		else if($counter == 1){
 			print "<div align = \"center\" id = \"center\" style = \"float:left; width = 25%; position:relative\"><table><td>";
-		}else if ($counter = 2){
+		}else if ($counter == 2){
 			print "<div align = \"right\" id = \"right\" style = \"float:left; width = 25%; position:absolute\"><table><td>";
 			
 		}
