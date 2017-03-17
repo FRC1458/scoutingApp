@@ -1,8 +1,5 @@
 <?PHP
 
-print "<p> TEST </p>";
-
-
     $servername = "localhost";
     $username = "esha";
     $password = "esha1234";
