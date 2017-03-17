@@ -50,6 +50,7 @@ if ($result->num_rows > 0) {
 			
 		}
 		print $counter; 
+		$counter++; 
 		
 		print "<th>" . $row["teamNumber"] . ": " . $row["teamName"] . $row["competition"] . "<td></td><td></td></th>";
 		
@@ -144,7 +145,7 @@ if ($result->num_rows > 0) {
 		print "<tr> <td>Match: </td><td>" . $row["matchComments"] . "</td><td></td><td></td></tr>";
 		
 		print "</div></table></td>";	
-		$counter++; 
+		
 	}
 	
 print "</div>";
