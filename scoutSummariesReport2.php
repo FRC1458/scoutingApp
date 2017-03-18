@@ -82,8 +82,7 @@ if ($result->num_rows > 0) {
         $pitComments[]               = $row["pitComments"];
         $matchComments[]             = $row["matchComments"];
     }
-print "<html>
-    <link  rel="stylesheet" type="text/css" href="dumpMatchTable.css" />
+print "<html><link rel=\"stylesheet\" type=\"text/css\" href=\"dumpMatchTable.css\" />
    <body>";
 print "<div class=pretty><table>";
 print "<tr><th>Team Number</th>" . "<th>" . $teamNumber[0] . "</th>". "<th>" . $teamNumber[1] . "</th>". "<th>" . $teamNumber[2] . "</th></tr>\n";
