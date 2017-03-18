@@ -67,7 +67,7 @@ if ($result->num_rows > 0) {
         $doAuto[]        = $row["useAuto"];
         $percentCross[]  = $row["prop_autoCross"];
         $percentGear[]   = $row["prop_autoGear"];
-        $percentdopper[] = $row["prop_autoHopper"];
+        $percentHopper[] = $row["prop_autoHopper"];
         $claimCross[]    = $row["claim_autoCross"];
         $claimGear[]     = $row["claim_autoGear"];
         $claimHopper[]   = $row["claim_autoHopper"];
