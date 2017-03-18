@@ -1,89 +1,90 @@
 <?PHP
-   function fa($a) {
-	$r = "";#tdingy
-	foreach ($a as $b) {
-		$r = $r . "<tb>" . $b . "</tb>";
-	}
-	$r = $r . " </tr>";#more tdingy
-	return $r;
-   }
-
-
-    $servername = "localhost";
-    $username = "root";
-    $password = "cookies";
-    $dbname = "scoutDB";
-    $table = "v_teams";
-    $teams = $_POST["teamNumber1"] . ", " . $_POST["teamNumber2"] . ", " . $_POST["teamNumber3"];   
- 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-        die("Connection: " . $conn->connect_error);
+function fa($a)
+{
+    $r = ""; #tdingy
+    foreach ($a as $b) {
+        $r = $r . "<tb>" . $b . "</tb>";
     }
-    $sql = "SELECT * FROM " . $table . "WHERE teamNumber IN (". $teams .")";
-    $result = $conn->query($sql);
-   #print $result;
-	if ($result->num_rows > 0) {
-		print "<div class=pretty>";
-		while($row = $result->fetch_assoc()) {
-			$teamNumber[] = $row["teamNumber"];
-			$teamName[] = $row["teamName"];
-			$competition[] = $row["competition"];
-			$avgScore[] = $row["avg_score"];
-			$devScore[] = $row["dev_score"];
-			$avgRating[] = $row["avg_rating"];
-			$devRating[] = $row["dev_rating"];
-			$overallStrat[] = $row["overallStrat"];
-	
-			$doClimb[] = $row["useClimb"];
-			$climbPercent[] = $row["prop_climbRope"];
-			$actualRopeHead[] = $row["avg_headRopeTime"];
-			$claimRopeHead[] = $row["claim_headRopeTime"];
-			$actualRopeGrab[] = $row["avg_grabRopeTime"];
-			$claimRopeGrab[] = $row["claim_grabRopeTime"];
+    $r = $r . " </tr>"; #more tdingy
+    return $r;
+}
 
-			$doGears[] = $row["useGear"];
-			$avgGears[] = $row["avg_gearsPassed"];
-			$devGears[] = $row["dev_gearsPassed"];
-			$groundPercent[] = $row["prop_pickUp"];
-			$usePegLeft[] = $row["prop_leftPeg"];
-			$usePegRight[] = $row["prop_rightPeg"];
-			$usePegCentre[] = $row["prop_centrePeg"];
-			$claimPegLeft[] = $row["claim_leftPeg"];
-			$claimPegRight[] = $row["claim_rightPeg"];
-			$claimPegCentre[] = $row["claim_centrePeg"];
-		
-			$doShooter[] = $row["useShooter"];
-			$shooterRating[] = $row["avg_shooterRating"];
-			$claimBPS[] = $row["claim_ballsPerSecond"];
-			$claimBallStorage[] = $row["claim_ballStorage"];
-			$needShootPlace[] = $row["prop_shooterPlace"];
-			$whereShootPlace[] = $row["shootingPlace"];
 
-			$driveType[] = $row["driveType"];
-			$maxSpeed[] = $row["maxSpeed"];
-			$numWheels[] = $row["numWheels"];
-			$hasTransmission[] = $row["hasTransmission"];
-		
-			$doAuto[] = $row["useAuto"];
-			$percentCross[] = $row["prop_autoCross"];
-			$percentGear[] = $row["prop_autoGear"];
-			$percentdopper[] = $row["prop_autoHopper"];
-			$claimCross[] = $row["claim_autoCross"];
-			$claimGear[] = $row["claim_autoGear"];
-			$claimHopper[] = $row["claim_autoHopper"];
-			$claimHigh[] = $row["claim_autoHigh"];
-			$claimLow[] = $row["claim_autoLow"];
+$servername = "localhost";
+$username   = "root";
+$password   = "cookies";
+$dbname     = "scoutDB";
+$table      = "v_teams";
+$teams      = $_POST["teamNumber1"] . ", " . $_POST["teamNumber2"] . ", " . $_POST["teamNumber3"];
 
-			$percentSusceptibleDefence[] = $row["avg_susceptibleDefence"];
-			$planNuclear[] = $row["claim_nuclear"];
-			$useNuclear[] = $row["prop_nuclear"];
-			$planDefence[] = $row["claim_defence"];
-			$useDefence[] = $row["prop_defence"];
-			$pitComments[] = $row["pitComments"];
-			$matchComments[] = $row["matchComments"];			
-	}
-
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection: " . $conn->connect_error);
+}
+$sql    = "SELECT * FROM " . $table . "WHERE teamNumber IN (" . $teams . ")";
+$result = $conn->query($sql);
+#print $result;
+if ($result->num_rows > 0) {
+    print "<div class=pretty>";
+    while ($row = $result->fetch_assoc()) {
+        $teamNumber[]   = $row["teamNumber"];
+        $teamName[]     = $row["teamName"];
+        $competition[]  = $row["competition"];
+        $avgScore[]     = $row["avg_score"];
+        $devScore[]     = $row["dev_score"];
+        $avgRating[]    = $row["avg_rating"];
+        $devRating[]    = $row["dev_rating"];
+        $overallStrat[] = $row["overallStrat"];
+        
+        $doClimb[]        = $row["useClimb"];
+        $climbPercent[]   = $row["prop_climbRope"];
+        $actualRopeHead[] = $row["avg_headRopeTime"];
+        $claimRopeHead[]  = $row["claim_headRopeTime"];
+        $actualRopeGrab[] = $row["avg_grabRopeTime"];
+        $claimRopeGrab[]  = $row["claim_grabRopeTime"];
+        
+        $doGears[]        = $row["useGear"];
+        $avgGears[]       = $row["avg_gearsPassed"];
+        $devGears[]       = $row["dev_gearsPassed"];
+        $groundPercent[]  = $row["prop_pickUp"];
+        $usePegLeft[]     = $row["prop_leftPeg"];
+        $usePegRight[]    = $row["prop_rightPeg"];
+        $usePegCentre[]   = $row["prop_centrePeg"];
+        $claimPegLeft[]   = $row["claim_leftPeg"];
+        $claimPegRight[]  = $row["claim_rightPeg"];
+        $claimPegCentre[] = $row["claim_centrePeg"];
+        
+        $doShooter[]        = $row["useShooter"];
+        $shooterRating[]    = $row["avg_shooterRating"];
+        $claimBPS[]         = $row["claim_ballsPerSecond"];
+        $claimBallStorage[] = $row["claim_ballStorage"];
+        $needShootPlace[]   = $row["prop_shooterPlace"];
+        $whereShootPlace[]  = $row["shootingPlace"];
+        
+        $driveType[]       = $row["driveType"];
+        $maxSpeed[]        = $row["maxSpeed"];
+        $numWheels[]       = $row["numWheels"];
+        $hasTransmission[] = $row["hasTransmission"];
+        
+        $doAuto[]        = $row["useAuto"];
+        $percentCross[]  = $row["prop_autoCross"];
+        $percentGear[]   = $row["prop_autoGear"];
+        $percentdopper[] = $row["prop_autoHopper"];
+        $claimCross[]    = $row["claim_autoCross"];
+        $claimGear[]     = $row["claim_autoGear"];
+        $claimHopper[]   = $row["claim_autoHopper"];
+        $claimHigh[]     = $row["claim_autoHigh"];
+        $claimLow[]      = $row["claim_autoLow"];
+        
+        $percentSusceptibleDefence[] = $row["avg_susceptibleDefence"];
+        $planNuclear[]               = $row["claim_nuclear"];
+        $useNuclear[]                = $row["prop_nuclear"];
+        $planDefence[]               = $row["claim_defence"];
+        $useDefence[]                = $row["prop_defence"];
+        $pitComments[]               = $row["pitComments"];
+        $matchComments[]             = $row["matchComments"];
+    }
+    
 }
 
 print "<div class=pretty><table>";
@@ -145,9 +146,9 @@ print "<tr><td>Pit Comments</td>" . fa($pitComments);
 print "<tr><td>Match Comments</td>" . fa($matchComments);
 
 print "</table></div>";
-} 
-    
-    $conn->close();
-    
-    
+
+
+$conn->close();
+
+
 ?>
