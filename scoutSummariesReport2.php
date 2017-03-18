@@ -1,10 +1,10 @@
 <?PHP
    function fa($a) {
-	$r = "";#thingy
+	$r = "";#tdingy
 	foreach ($a as $b) {
-		$r = $r . "<tb>" . $b . "</tb>";
+		$r = $r . "<tb>" . $b . "</tb> ";
 	}
-	$r = $r . "";#more thingy
+	$r = $r . " </tr>";#more tdingy
 	return $r;
    }
 
@@ -25,7 +25,6 @@
     $result = $conn->query($sql);
    #print $result;
 if ($result->num_rows > 0) {
-	print "<div class=pretty>";
 	while($row = $result->fetch_assoc()) {
 		$teamNumber[] = $row["teamNumber"];
 		$teamName[] = $row["teamName"];
@@ -63,13 +62,13 @@ if ($result->num_rows > 0) {
 
 		$driveType[] = $row["driveType"];
 		$maxSpeed[] = $row["maxSpeed"];
-		$numWheels[] = $row["maxSpeed"];
+		$numWheels[] = $row["numWheels"];
 		$hasTransmission[] = $row["hasTransmission"];
 		
 		$doAuto[] = $row["useAuto"];
 		$percentCross[] = $row["prop_autoCross"];
 		$percentGear[] = $row["prop_autoGear"];
-		$percentHopper[] = $row["prop_autoHopper"];
+		$percentdopper[] = $row["prop_autoHopper"];
 		$claimCross[] = $row["claim_autoCross"];
 		$claimGear[] = $row["claim_autoGear"];
 		$claimHopper[] = $row["claim_autoHopper"];
@@ -82,19 +81,64 @@ if ($result->num_rows > 0) {
 		$planDefence[] = $row["claim_defence"];
 		$useDefence[] = $row["prop_defence"];
 		$pitComments[] = $row["pitComments"];
-		$matchComments[] = $row["matchComments"];
-		
-		print "<p> Percent susceptible to defence: " . $row["avg_susceptibleDefence"] . "</p>";
-		print "<p> Plan nuclear: " . $row["claim_nuclear"] . "</p>";
-		print "<p> Percent use nuclear: " . $row["prop_nuclear"] . "</p>";
-		print "<p> Plan defence: " . $row["claim_defence"] . "</p>";
-		print "<p> Percent do defence: " . $row["prop_defence"] . "</p>";
-		print "<p> <h1>Comments</h1> </p>";
-		print "<p> Pit: " . $row["pitComments"] . "</p>";
-		print "<p> Match: " . $row["matchComments"] . "</p>";
-		print "</div>";				
+		$matchComments[] = $row["matchComments"];		
 	}
-print "</div>";
+	print "<div class=pretty><table>";
+	print "<tr>";
+print "<td>Team Number</td>
+print "<td>Team Name</td>
+print "<td>Competition</td>
+print "<td>Avg Score</td>
+print "<td>Dev Score</td>
+print "<td>Avg Rating</td>
+print "<td>Dev Rating</td>
+print "<td>Strategy</td>
+
+print "<td>Do Climb</td>
+print "<td>Percent Climb</td>
+print "<td>Avg Head Time</td>
+print "<td>Claim Head Time</td>
+print "<td>Avg Grab Time</td>
+print "<td>Claim Grab Time</td>
+
+print "<td>Do Gears</td>
+print "<td>Avg Gears</td>
+print "<td>Dev Gears</td>
+print "<td>Percent Ground</td>
+print "<td>Plan r/l/c</td>
+print "<td>Actual r/l/c</td>
+
+print "<td>Do Shooter</td>
+print "<td>Shooting Rating</td>
+print "<td>Balls Per Second</td>
+print "<td>Ball Storage</td>
+print "<td>Prop Specific Place</td>
+print "<td>Shooting Place</td>
+
+print "<td>Drive Type</td>
+print "<td>Max Speed</td>
+print "<td>Num Wheels</td>
+print "<td>Has Transmission</td>
+
+print "<td>Do Auto</td>
+print "<td>Percent Cross</td>
+print "<td>Percent Gear</td>
+print "<td>Percent Hopper</td>
+print "<td>Claim Cross</td>
+print "<td>Claim Gear</td>
+print "<td>Claim Hopper</td>
+print "<td>Claim High</td>
+print "<td>Claim Low</td>
+
+print "<td>Percent Defence</td>
+print "<td>Plan Nuclear</td>
+print "<td>Prop Nuclear</td>
+print "<td>Plan Defence</td>
+print "<td>Prop Defence</td>
+print "<td>Pit Comments</td>
+print "<td>Match Comments</td>
+
+print "</table></div>";
 } 
     
     $conn->close();
