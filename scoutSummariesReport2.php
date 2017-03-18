@@ -5,7 +5,7 @@ function fa($a)
     foreach ($a as $b) {
         $r = $r . "<tb>" . $b . "</tb>";
     }
-    $r = $r . " </tr>"; #more tdingy
+    $r = $r . " </tr>\n"; #more tdingy
     return $r;
 }
 
@@ -84,7 +84,7 @@ if ($result->num_rows > 0) {
     }
 print "DEBUG";
 print "<div class=pretty><table>";
-print "<tr><td>Team Number</td>" . fa($teamNumber);
+print "<tr><th>Team Number</th>" . "<th>" . $teamNumber[0] . "</th>". "<th>" . $teamNumber[1] . "</th>". "<th>" . $teamNumber[2] . "</th></tr>\n";
 print "<tr><td>Team Name</td>" . fa($teamName);
 print "<tr><td>Competition</td>" . fa($competition);
 print "<tr><td>Avg Score</td>" . fa($avgScore);
