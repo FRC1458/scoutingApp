@@ -82,7 +82,6 @@ if ($result->num_rows > 0) {
         $pitComments[]               = $row["pitComments"];
         $matchComments[]             = $row["matchComments"];
     }
-print "DEBUG";
 print "<div class=pretty><table>";
 print "<tr><th>Team Number</th>" . "<th>" . $teamNumber[0] . "</th>". "<th>" . $teamNumber[1] . "</th>". "<th>" . $teamNumber[2] . "</th></tr>\n";
 print "<tr><td>Team Name</td>" . fa($teamName);
