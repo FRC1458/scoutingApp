@@ -3,7 +3,7 @@ function fa($a)
 {
     $r = ""; #tdingy
     foreach ($a as $b) {
-        $r = $r . "<tb>" . $b . "</tb>";
+        $r = $r . "<td>" . $b . "</td>";
     }
     $r = $r . " </tr>\n"; #more tdingy
     return $r;
