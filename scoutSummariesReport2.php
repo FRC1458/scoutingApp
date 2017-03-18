@@ -21,7 +21,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection: " . $conn->connect_error);
 }
-$sql    = "SELECT * FROM " . $table . "WHERE teamNumber IN (" . $teams . ")";
+$sql    = "SELECT * FROM " . $table . " WHERE teamNumber IN (" . $teams . ")";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     print "<div class=pretty>";
@@ -142,6 +142,8 @@ print "<tr><td>Pit Comments</td>" . fa($pitComments);
 print "<tr><td>Match Comments</td>" . fa($matchComments);
 
 print "</table></div>";
+} else {
+	print "Failed to get results";
 }
 
 
