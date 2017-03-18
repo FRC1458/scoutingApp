@@ -1,10 +1,10 @@
 <?PHP
    function fa($a) {
-	$r = "";#thingy
+	$r = "";#tdingy
 	foreach ($a as $b) {
-		$r = $r . "<tb>" . $b . "</tb>";
+		$r = $r . "<td>" . $b . "</td> ";
 	}
-	$r = $r . "";#more thingy
+	$r = $r . " </tr>";#more tdingy
 	return $r;
    }
 
@@ -25,7 +25,6 @@
     $result = $conn->query($sql);
    #print $result;
 if ($result->num_rows > 0) {
-	print "<div class=pretty>";
 	while($row = $result->fetch_assoc()) {
 		$teamNumber[] = $row["teamNumber"];
 		$teamName[] = $row["teamName"];
@@ -63,7 +62,7 @@ if ($result->num_rows > 0) {
 
 		$driveType[] = $row["driveType"];
 		$maxSpeed[] = $row["maxSpeed"];
-		$numWheels[] = $row["maxSpeed"];
+		$numWheels[] = $row["numWheels"];
 		$hasTransmission[] = $row["hasTransmission"];
 		
 		$doAuto[] = $row["useAuto"];
@@ -82,19 +81,67 @@ if ($result->num_rows > 0) {
 		$planDefence[] = $row["claim_defence"];
 		$useDefence[] = $row["prop_defence"];
 		$pitComments[] = $row["pitComments"];
-		$matchComments[] = $row["matchComments"];
-		
-		print "<p> Percent susceptible to defence: " . $row["avg_susceptibleDefence"] . "</p>";
-		print "<p> Plan nuclear: " . $row["claim_nuclear"] . "</p>";
-		print "<p> Percent use nuclear: " . $row["prop_nuclear"] . "</p>";
-		print "<p> Plan defence: " . $row["claim_defence"] . "</p>";
-		print "<p> Percent do defence: " . $row["prop_defence"] . "</p>";
-		print "<p> <h1>Comments</h1> </p>";
-		print "<p> Pit: " . $row["pitComments"] . "</p>";
-		print "<p> Match: " . $row["matchComments"] . "</p>";
-		print "</div>";				
+		$matchComments[] = $row["matchComments"];		
 	}
-print "</div>";
+	print "<div class=pretty><table>";
+print "<tr><td>Team Number</td>" . fa($teamNumber);
+print "<tr><td>Team Name</td>" . fa($teamName);
+print "<tr><td>Competition</td>" . fa($competition);
+print "<tr><td>Avg Score</td>" . fa($avgScore);
+print "<tr><td>Dev Score</td>" . fa($devScore);
+print "<tr><td>Avg Rating</td>" . fa($avgRating);
+print "<tr><td>Dev Rating</td>" . fa($devRating);
+print "<tr><td>Strategy</td>" . fa($overallStrat);
+
+print "<tr><td>Do Climb</td>" . fa($doClimb);
+print "<tr><td>Percent Climb</td>" . fa($climbPercent);
+print "<tr><td>Avg Head Time</td>" . fa($actualRopeHead);
+print "<tr><td>Claim Head Time</td>" . fa($claimRopeHead);
+print "<tr><td>Avg Grab Time</td>" . fa($actualRopeGrab);
+print "<tr><td>Claim Grab Time</td>" . fa($claimRopeGrab);
+
+print "<tr><td>Do Gears</td>" . fa($doGears);
+print "<tr><td>Avg Gears</td>" . fa($avgGears);
+print "<tr><td>Dev Gears</td>" . fa($devGears);
+print "<tr><td>Percent Ground</td>" . fa($groundPercent);
+print "<tr><td>Plan r</td>" . fa($claimPegRight);
+print "<tr><td>Plan l</td>" . fa($claimPegLeft);
+print "<tr><td>Plan c</td>" . fa($claimPegCentre);
+print "<tr><td>Actual r</td>" . fa($usePegRight);
+print "<tr><td>Actual l</td>" . fa($usePegLeft);
+print "<tr><td>Actual c</td>" . fa($usePegCentre);
+
+print "<tr><td>Do Shooter</td>" . fa($doShooter);
+print "<tr><td>Shooting Rating</td>" . fa($shooterRating);
+print "<tr><td>Balls Per Second</td>" . fa($claimBPS);
+print "<tr><td>Ball Storage</td>" . fa($claimBallStorage);
+print "<tr><td>Prop Specific Place</td>" . fa($needShootPlace);
+print "<tr><td>Shooting Place</td>" . fa($whereShootPlace);
+
+print "<tr><td>Drive Type</td>" . fa($driveType);
+print "<tr><td>Max Speed</td>" . fa($maxSpeed);
+print "<tr><td>Num Wheels</td>" . fa($numWheels);
+print "<tr><td>Has Transmission</td>" . fa($hasTransmission);
+
+print "<tr><td>Do Auto</td>" . fa($doAuto);
+print "<tr><td>Percent Cross</td>" . fa($percentCross);
+print "<tr><td>Percent Gear</td>" . fa($percentGear);
+print "<tr><td>Percent Hopper</td>" . fa($percentHopper);
+print "<tr><td>Claim Cross</td>" . fa($claimCross);
+print "<tr><td>Claim Gear</td>" . fa($claimGear);
+print "<tr><td>Claim Hopper</td>" . fa($claimHopper);
+print "<tr><td>Claim High</td>" . fa($claimHigh);
+print "<tr><td>Claim Low</td>" . fa($claimLow);
+
+print "<tr><td>Percent Defence</td>" . fa($percentSusceptibleDefence);
+print "<tr><td>Plan Nuclear</td>" . fa($planNuclear);
+print "<tr><td>Prop Nuclear</td>" . fa($useNuclear);
+print "<tr><td>Plan Defence</td>" . fa($planDefence);
+print "<tr><td>Prop Defence</td>" . fa($useDefence);
+print "<tr><td>Pit Comments</td>" . fa($pitComments);
+print "<tr><td>Match Comments</td>" . fa($matchComments);
+
+print "</table></div>";
 } 
     
     $conn->close();
