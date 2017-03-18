@@ -82,6 +82,9 @@ if ($result->num_rows > 0) {
         $pitComments[]               = $row["pitComments"];
         $matchComments[]             = $row["matchComments"];
     }
+print "<html>
+    <link  rel="stylesheet" type="text/css" href="dumpMatchTable.css" />
+   <body>";
 print "<div class=pretty><table>";
 print "<tr><th>Team Number</th>" . "<th>" . $teamNumber[0] . "</th>". "<th>" . $teamNumber[1] . "</th>". "<th>" . $teamNumber[2] . "</th></tr>\n";
 print "<tr><td>Team Name</td>" . fa($teamName);
@@ -140,7 +143,7 @@ print "<tr><td>Prop Defence</td>" . fa($useDefence);
 print "<tr><td>Pit Comments</td>" . fa($pitComments);
 print "<tr><td>Match Comments</td>" . fa($matchComments);
 
-print "</table></div>";
+print "</table></div></body></html>";
 } else {
 	print "Failed to get results";
 }
