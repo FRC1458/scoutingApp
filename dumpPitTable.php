@@ -11,7 +11,7 @@ print "<p> TEST </p>";
     if ($conn->connect_error) {
         die("Connection: " . $conn->connect_error);
     }
-    $sql = "SELECT * FROM " . $pitTable;
+    $sql = "SELECT * FROM " . $pitTable . " ORDER BY teamNumber ASC";
     
     $result = $conn->query($sql);
     

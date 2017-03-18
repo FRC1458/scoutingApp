@@ -12,7 +12,7 @@
     }
    $matchTable = "matchreporttable";
     
-    $sql = "SELECT * FROM " . $matchTable;
+    $sql = "SELECT * FROM " . $matchTable . " ORDER BY teamNumber ASC";
     
     $result = $conn->query($sql);
     ?>
