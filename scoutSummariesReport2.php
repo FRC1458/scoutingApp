@@ -23,7 +23,6 @@ if ($conn->connect_error) {
 }
 $sql    = "SELECT * FROM " . $table . "WHERE teamNumber IN (" . $teams . ")";
 $result = $conn->query($sql);
-#print $result;
 if ($result->num_rows > 0) {
     print "<div class=pretty>";
     while ($row = $result->fetch_assoc()) {
@@ -84,10 +83,7 @@ if ($result->num_rows > 0) {
         $pitComments[]               = $row["pitComments"];
         $matchComments[]             = $row["matchComments"];
     }
-    
-}
-
-print "<div class=pretty><table>";
+    print "<div class=pretty><table>";
 print "<tr><td>Team Number</td>" . fa($teamNumber);
 print "<tr><td>Team Name</td>" . fa($teamName);
 print "<tr><td>Competition</td>" . fa($competition);
@@ -146,6 +142,9 @@ print "<tr><td>Pit Comments</td>" . fa($pitComments);
 print "<tr><td>Match Comments</td>" . fa($matchComments);
 
 print "</table></div>";
+}
+
+
 
 
 $conn->close();
