@@ -2,7 +2,7 @@
    function fa($a) {
 	$r = "";#tdingy
 	foreach ($a as $b) {
-		$r = $r . "<td>" . $b . "</td> ";
+		$r = $r . "<tb>" . $b . "</tb>";
 	}
 	$r = $r . " </tr>";#more tdingy
 	return $r;
@@ -25,6 +25,7 @@
     $result = $conn->query($sql);
    #print $result;
 if ($result->num_rows > 0) {
+	print "<div class=pretty>";
 	while($row = $result->fetch_assoc()) {
 		$teamNumber[] = $row["teamNumber"];
 		$teamName[] = $row["teamName"];
@@ -68,7 +69,7 @@ if ($result->num_rows > 0) {
 		$doAuto[] = $row["useAuto"];
 		$percentCross[] = $row["prop_autoCross"];
 		$percentGear[] = $row["prop_autoGear"];
-		$percentHopper[] = $row["prop_autoHopper"];
+		$percentdopper[] = $row["prop_autoHopper"];
 		$claimCross[] = $row["claim_autoCross"];
 		$claimGear[] = $row["claim_autoGear"];
 		$claimHopper[] = $row["claim_autoHopper"];
@@ -81,17 +82,25 @@ if ($result->num_rows > 0) {
 		$planDefence[] = $row["claim_defence"];
 		$useDefence[] = $row["prop_defence"];
 		$pitComments[] = $row["pitComments"];
-		$matchComments[] = $row["matchComments"];		
+		$matchComments[] = $row["matchComments"];
+		
+		print "<p> Percent susceptible to defence: " . $row["avg_susceptibleDefence"] . "</p>";
+		print "<p> Plan nuclear: " . $row["claim_nuclear"] . "</p>";
+		print "<p> Percent use nuclear: " . $row["prop_nuclear"] . "</p>";
+		print "<p> Plan defence: " . $row["claim_defence"] . "</p>";
+		print "<p> Percent do defence: " . $row["prop_defence"] . "</p>";
+		print "<p> <h1>Comments</h1> </p>";
+		print "<p> Pit: " . $row["pitComments"] . "</p>";
+		print "<p> Match: " . $row["matchComments"] . "</p>";
+		print "</div>";				
 	}
-	print "<div class=pretty><table>";
-print "<tr><td>Team Number</td>" . fa($teamNumber);
-print "<tr><td>Team Name</td>" . fa($teamName);
-print "<tr><td>Competition</td>" . fa($competition);
-print "<tr><td>Avg Score</td>" . fa($avgScore);
-print "<tr><td>Dev Score</td>" . fa($devScore);
-print "<tr><td>Avg Rating</td>" . fa($avgRating);
-print "<tr><td>Dev Rating</td>" . fa($devRating);
-print "<tr><td>Strategy</td>" . fa($overallStrat);
+print "</div>";
+} 
+    
+    $conn->close();
+    
+    
+?>
 
 print "<tr><td>Do Climb</td>" . fa($doClimb);
 print "<tr><td>Percent Climb</td>" . fa($climbPercent);
@@ -148,3 +157,32 @@ print "</table></div>";
     
     
 ?>
+		$r = $r . "<td>" . $b . "</td> ";
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "cookies";
+    $dbname = "scoutDB";
+    $table = "v_teams";
+    $teams = $_POST["teamNumber1"] . ", " . $_POST["teamNumber2"] . ", " . $_POST["teamNumber3"];   
+ 
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("Connection: " . $conn->connect_error);
+    }
+    $sql = "SELECT * FROM " . $table . "WHERE teamNumber IN (". $teams .")";
+    print $conn;
+    $result = $conn->query($sql);
+   #print $result;
+if ($result->num_rows > 0) {
+		$matchComments[] = $row["matchComments"];		
+	}
+	print "<div class=pretty><table>";
+print "<tr><td>Team Number</td>" . fa($teamNumber);
+print "<tr><td>Team Name</td>" . fa($teamName);
+print "<tr><td>Competition</td>" . fa($competition);
+print "<tr><td>Avg Score</td>" . fa($avgScore);
+print "<tr><td>Dev Score</td>" . fa($devScore);
+print "<tr><td>Avg Rating</td>" . fa($avgRating);
+print "<tr><td>Dev Rating</td>" . fa($devRating);
+print "<tr><td>Strategy</td>" . fa($overallStrat);

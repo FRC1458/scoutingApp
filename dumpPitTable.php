@@ -1,6 +1,5 @@
 <?PHP
 
-print "<p> TEST </p>";
     $servername = "localhost";
     $username = "esha";
     $password = "esha1234";
@@ -18,6 +17,7 @@ print "<p> TEST </p>";
 ?>
 <html>
     <link  rel="stylesheet" type="text/css" href="dumpMatchTable.css" />
+    <link  rel="stylesheet" type="text/css" href="/font-awesome-4.7.0/css/font-awesome.min.css" />
    <body>
  
   <?PHP
@@ -42,10 +42,7 @@ print "<p> TEST </p>";
                 <th> Auto Low Goals </th>
                 <th> Auto Hopper </th>
                 <th> Auto Cross Line </th>
-                <th> Opp Right Feeder </th>
-                <th> Opp Left Feeder </th>
-                <th> Same Side Feeder </th>
-                <th> No feeder </th>
+                <th> Feeder </th>
                 <th> Low Goal </th>
                 <th> High Goal</th>
                 <th> Balls per second </th>
@@ -59,49 +56,86 @@ print "<p> TEST </p>";
                 <th> Attach time </th>
                 <th> Climb time </th>
                 <th> Other comments </th>
-                <th> San Fransisco Comp </th>
-                <th> Sacramento Comp </th>
-                <th> Competition 3 </th>
+                <th> Competitions </th>
                 <th> Reporter </th>
                 <th> Report ID </th> </tr>";
         while($row = $result -> fetch_assoc()) {
+            $comps = "";
+            if ($row['competition1'] == 1) {
+                $comps = $comps . "San Fransisco, ";
+            }
+            if ($row['competition2'] == 1) {
+                $comps = $comps . "Sacramento, ";
+            }
+            if ($row['competition3'] == 1) {
+                $comps = $comps . "Comp 3, ";
+            }
+            $comps = rtrim($comps, ", "); // Something
+
+            $feeder = "";
+            if ($row['oppositeRight'] == 1) {
+                $feeder = $feeder . "Opp Right, ";
+            }
+            if ($row['oppositeLeft'] == 1) {
+                $feeder = $feeder . "Opp Left, ";
+            }
+            if ($row['sameSide'] == 1) {
+                $feeder = $feeder . "Same Side, ";
+            }
+            if ($row['none'] == 1) {
+                $feeder = $feeder . "None, ";
+            }
+            $feeder = rtrim($feeder, ", "); // Something
+
+
+            /*$auto = "";
+            if ($row['oppositeRight'] == 1) {
+                $feeder = $feeder . "Opp Right, ";
+            }
+            if ($row['oppositeLeft'] == 1) {
+                $feeder = $feeder . "Opp Left, ";
+            }
+            if ($row['sameSide'] == 1) {
+                $feeder = $feeder . "Same Side, ";
+            }
+            if ($row['none'] == 1) {
+                $feeder = $feeder . "None, ";
+            }
+            $auto = rtrim($auto, ", "); // Something*/
+
+
             print "<tr> <td> <a href=\"showPitReport.php?reportID=" . $row['reportID'] ."\">" . $row['teamNumber'] . "</a> </td>
             <td>" . $row['maxSpeed'] . "</td>
-            <td>" . $row['transmission'] . "</td>
-            <td>" . $row['wheelNumber'] . "</td>
-            <td>" . $row['driveType'] . "</td>
-            <td>" . $row['driveDescription'] . "</td>
-            <td>" . $row['shooterStrategy'] . "</td>
-            <td>" . $row['gearStrategy'] . "</td>
-            <td>" . $row['defenseStrategy'] . "</td>
-            <td>" . $row['nuclearStrategy'] . "</td>
-            <td>" . $row['howToWin'] . "</td>
-            <td>" . $row['autonomous'] . "</td>
-            <td>" . $row['autonomousGear'] . "</td>
-            <td>" . $row['autonomousHighGoal'] . "</td>
-            <td>" . $row['autonomousLowGoal'] . "</td>
-            <td>" . $row['autonomousHopper'] . "</td>
-            <td>" . $row['autonomousCrossLine'] . "</td>
-            <td>" . $row['oppositeRight'] . "</td>
-            <td>" . $row['oppositeLeft'] . "</td>
-            <td>" . $row['sameSide'] . "</td>
-            <td>" . $row['none'] . "</td>
-            <td>" . $row['lowGoal'] . "</td>
-            <td>" . $row['highGoal'] . "</td>
-            <td>" . $row['ballsPerSecond'] . "</td>
-            <td>" . $row['maxBalls'] . "</td>
-            <td>" . $row['capableOfGears'] . "</td>
-            <td>" . $row['gearLeft'] . "</td>
-            <td>" . $row['gearRight'] . "</td>
-            <td>" . $row['gearMiddlePeg'] . "</td>
-            <td>" . $row['gearNone'] . "</td>
-            <td>" . $row['capableOfRope'] . "</td>
-            <td>" . $row['attachTime'] . "</td>
-            <td>" . $row['climbTime'] . "</td>
-            <td>" . $row['otherComments'] . "</td>
-            <td>" . $row['competition1'] . "</td>
-            <td>" . $row['competition2'] . "</td>
-            <td>" . $row['competition3'] . "</td>
+            <td>" . ($row['transmission'] == 1 ? " <i class=\"fa fa-check fa-2x\"></i>" : " <i class=\"fa fa-times fa-2x\"></i>") . "</td>
+            <td>" . ($row['wheelNumber']) . "</td>
+            <td>" . ($row['driveType']) . "</td>
+            <td>" . ($row['driveDescription']) . "</td>
+            <td>" . ($row['shooterStrategy'] == 1 ? " <i class=\"fa fa-check fa-2x\"></i>" : " <i class=\"fa fa-times fa-2x\"></i>") . "</td>
+            <td>" . ($row['gearStrategy'] == 1 ? " <i class=\"fa fa-check fa-2x\"></i>" : " <i class=\"fa fa-times fa-2x\"></i>") . "</td>
+            <td>" . ($row['defenseStrategy'] == 1 ? " <i class=\"fa fa-check fa-2x\"></i>" : " <i class=\"fa fa-times fa-2x\"></i>") . "</td>
+            <td>" . ($row['nuclearStrategy'] == 1 ? " <i class=\"fa fa-check fa-2x\"></i>" : " <i class=\"fa fa-times fa-2x\"></i>") . "</td>
+            <td>" . ($row['howToWin']) . "</td>
+            <td>" . ($row['autonomous'] == 1 ? " <i class=\"fa fa-check fa-2x\"></i>" : " <i class=\"fa fa-times fa-2x\"></i>") . "</td>
+            <td>" . ($row['autonomousGear'] == 1 ? " <i class=\"fa fa-check fa-2x\"></i>" : " <i class=\"fa fa-times fa-2x\"></i>") . "</td>
+            <td>" . ($row['autonomousHighGoal'] == 1 ? " <i class=\"fa fa-check fa-2x\"></i>" : " <i class=\"fa fa-times fa-2x\"></i>") . "</td>
+            <td>" . ($row['autonomousLowGoal'] == 1 ? " <i class=\"fa fa-check fa-2x\"></i>" : " <i class=\"fa fa-times fa-2x\"></i>") . "</td>
+            <td>" . ($row['autonomousHopper'] == 1 ? " <i class=\"fa fa-check fa-2x\"></i>" : " <i class=\"fa fa-times fa-2x\"></i>") . "</td>
+            <td>" . ($row['autonomousCrossLine'] == 1 ? " <i class=\"fa fa-check fa-2x\"></i>" : " <i class=\"fa fa-times fa-2x\"></i>") . "</td>
+            <td>" . $feeder . "</td>
+            <td>" . ($row['lowGoal'] == 1 ? " <i class=\"fa fa-check fa-2x\"></i>" : " <i class=\"fa fa-times fa-2x\"></i>") . "</td>
+            <td>" . ($row['highGoal'] == 1 ? " <i class=\"fa fa-check fa-2x\"></i>" : " <i class=\"fa fa-times fa-2x\"></i>") . "</td>
+            <td>" . ($row['ballsPerSecond']) . "</td>
+            <td>" . ($row['maxBalls']) . "</td>
+            <td>" . ($row['capableOfGears'] == 1 ? " <i class=\"fa fa-check fa-2x\"></i>" : " <i class=\"fa fa-times fa-2x\"></i>") . "</td>
+            <td>" . ($row['gearLeft'] == 1 ? " <i class=\"fa fa-check fa-2x\"></i>" : " <i class=\"fa fa-times fa-2x\"></i>") . "</td>
+            <td>" . ($row['gearRight'] == 1 ? " <i class=\"fa fa-check fa-2x\"></i>" : " <i class=\"fa fa-times fa-2x\"></i>") . "</td>
+            <td>" . ($row['gearMiddlePeg'] == 1 ? " <i class=\"fa fa-check fa-2x\"></i>" : " <i class=\"fa fa-times fa-2x\"></i>") . "</td>
+            <td>" . ($row['gearNone'] == 1 ? " <i class=\"fa fa-check fa-2x\"></i>" : " <i class=\"fa fa-times fa-2x\"></i>") . "</td>
+            <td>" . ($row['capableOfRope'] == 1 ? " <i class=\"fa fa-check fa-2x\"></i>" : " <i class=\"fa fa-times fa-2x\"></i>") . "</td>
+            <td>" . ($row['attachTime']) . "</td>
+            <td>" . ($row['climbTime']) . "</td>
+            <td>" . ($row['otherComments']) . "</td>
+            <td>" . $comps . "</td>
             <td>" . $row['reporterFirstName'] . " " . $row['reporterLastName'] . "</td>
             <td>" . $row['reportID'] . "</td> </tr>";
         }
