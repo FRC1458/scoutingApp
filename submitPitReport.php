@@ -154,7 +154,7 @@
    
     # print "<p> $sql </p>";
     
-    $result = $conn->query($sql);
+    $result = $conn->query($conn->real_escape_string($sql));
     
     if ($result === TRUE) {
         echo "Following report added to database:";

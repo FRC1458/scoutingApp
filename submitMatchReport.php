@@ -106,7 +106,8 @@
     $teleopHopper, '$gearsPassedInAirship', $leftPeg, $rightPeg, $centerPeg, '$headingToRopeTime',
     '$timeToGrab', '$timeToClimb', $lightOn, $climbRope, '$comments', $robotDefense, $robotRating,
     '$competition', $teamScore, '$reporterFirstName', '$reporterLastName')";
-    
+
+    $sql = str_replace("'", "`", $sql);
     print "$sql";
     $result = $conn->query($sql);
     
