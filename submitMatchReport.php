@@ -107,7 +107,7 @@
     '$timeToGrab', '$timeToClimb', $lightOn, $climbRope, '$comments', $robotDefense, $robotRating,
     '$competition', $teamScore, '$reporterFirstName', '$reporterLastName')";
 
-    $sql = str_replace("'", "`", $sql);
+    //$sql = str_replace("'", "`", $sql);
     print "$sql";
     $result = $conn->query($sql);
     
