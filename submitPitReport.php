@@ -152,9 +152,9 @@
     $competition3 . ", " . $scoutersInitials . ")";
     */
    
-    # print "<p> $sql </p>";
+    print "<p> $sql </p>";
     
-    $result = $conn->query($conn->real_escape_string($sql));
+   $result = $conn->query($sql);
     
     if ($result === TRUE) {
         echo "Following report added to database:";
