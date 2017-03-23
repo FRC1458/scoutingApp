@@ -95,6 +95,7 @@
             }
         }
     }
+    
     $sql = "INSERT INTO $matchTable (teamNumber, driveStation, autoHopper, crossLine, gearUse, shooterRating,
     engageHopper, shootingPlace, whereShootingPlace, susceptibleDefense, highGoal, lowGoal,
     oppositeLeft, oppositeRight, sameSide, noFeeder, pickUp, nuclear, teleopHopper, gearsPassedInAirship, 
@@ -107,7 +108,6 @@
     '$timeToGrab', '$timeToClimb', $lightOn, $climbRope, '$comments', $robotDefense, $robotRating,
     '$competition', $teamScore, '$reporterFirstName', '$reporterLastName')";
 
-    //$sql = str_replace("'", "`", $sql);
     print "$sql";
     $result = $conn->query($sql);
     
