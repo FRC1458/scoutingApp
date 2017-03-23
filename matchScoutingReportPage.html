@@ -52,8 +52,9 @@
                   <div id="Autonomous"><center><u><b> Autonomous: </u></div>
                     </b> 
                     <br> <br>
-                  
-                      Team Number:
+                    
+                    
+                        Team Number:
                         <input type = "number" name = "teamNumber" required/>
                         <br>
                         
@@ -90,59 +91,53 @@
                         <input type = "radio" name = "gearUse" value = "attempted"/> Tried and failed
                         <br>
                         <br>
-
-                      
+                        
+                        On a scale of 1 - 5, how good was the shooter? (1= mostly miss, 5=perfect shooter)
+                        <input type = "number" name = "shooterRating">
+                        <br>
+                        Engages hopper?
+                        <br>
+                        <input type = "radio" name = "engageHopper" value = "True" checked = "checked"/> Yes
+                        <br>
+                        <input type = "radio" name = "engageHopper" value = "False"/> No
+                        <br>
+                        <br>
+                        <br>
                    <div id="Teleop"><b><center> <u> Teleop: </u></div>
                     </b>
                     <br>
                     <br>
-                       
-                       Shooting:
-                       <br>
-                       On a scale of 1 - 5, how good was the shooter? (1= mostly miss, 5=perfect shooter)
-                        <input type = "number" name = "shooterRating">
-                        <br>
-                       
-                       Needs to shoot from a particular place in the floor?
+                        Needs to shoot from a particular place in the floor?
                         <br>
                         <input type = "radio" name = "shootingPlace" value = "True" checked = "checked"> Yes
                         <br>
                         <input type = "radio" name = "shootingPlace" value = "False"> No
                         <br>
-                       
                         If so, where do they shoot from?
                         <br>
                         <input type = "text" name = "whereShootingPlace" value = " ">
                         <br>
-                      
-                       Attempted high goal?
+                        <br>
+                        Susceptible to defense?
+                        <br>
+                        <input type = "radio" name = "susceptibleDefense" value = "True" checked = "checked"> Yes
+                        <br>
+                        <input type = "radio" name = "susceptibleDefense" value = "False"> No
+                        <br>
+                        Attempted high goal?
                         <br>
                         <input type = "radio" name = "highGoal" value = "True" checked = "checked"> Yes
                         <br>
                         <input type = "radio" name = "highGoal" value = "False"> No
                         <br>
                         
-                       Attempted low goal?
+                        Attempted low goal?
                         <br>
                         <input type = "radio" name = "lowGoal" value = "True" checked = "checked"> Yes
                         <br>
                         <input type = "radio" name = "lowGoal" value = "False"> No
                         <br>
-                       
-                        Teleop hopper?
                         <br>
-                        <input type = "radio" name = "teleopHopper" value = "True" checked = "checked"> Yes
-                        <br>
-                        <input type = "radio" name = "teleopHopper" value = "False"> No
-                        <br>
-                       
-                       Engages hopper?
-                        <br>
-                        <input type = "radio" name = "engageHopper" value = "True" checked = "checked"/> Yes
-                        <br>
-                        <input type = "radio" name = "engageHopper" value = "False"/> No
-                        <br>
-                                              
                         Feeder Preference?
                         <br>
                         <input type = "checkbox" name = "feederPreference[]" value = "Opposite Left"> Opposite Left
@@ -151,9 +146,10 @@
                         <br>
                         <input type = "checkbox" name = "feederPreference[]" value = "Same side"> Same side
                         <br>
-                       <input type = "checkbox" name = "feederPreference[]" value = "No Feeder"> None
+                        <input type = "checkbox" name = "feederPreference[]" value = "No Feeder"> None
                         <br>
-                      
+                        <br>
+                        
                         Capable of picking up balls?
                         <br>
                         <input type = "radio" name = "pickUp" value = "True" checked = "checked"> Yes
@@ -161,10 +157,26 @@
                         <input type = "radio" name = "pickUp" value = "False"> No
                         <br>
                         <br>
-                       
-                       Gear: 
-                       <br>
-                       
+                        
+                        Nuclear option? (This is the ability to dump all balls from hoppers at beginning of match, a defense tactic)
+                        <br>
+                        <input type = "radio" name = "nuclear" value = "True" checked = "checked"> Yes
+                        <br>
+                        <input type = "radio" name = "nuclear" value = "False"> No
+                        <br>
+                        <br>
+                        Teleop hopper?
+                        <br>
+                        <input type = "radio" name = "teleopHopper" value = "True" checked = "checked"> Yes
+                        <br>
+                        <input type = "radio" name = "teleopHopper" value = "False"> No
+                        <br>
+                        
+                        Gears passed to airship?
+                        <input type = "number" name = "gearsPassedInAirship" required value="0">
+                        <br>
+                        <br>
+                        
                         Peg preference?
                         <br>
                         <input type = "checkbox" name = "gearPegPreference[]" value = "Left peg"> Left
@@ -173,36 +185,9 @@
                         <br>
                         <input type = "checkbox" name = "gearPegPreference[]" value = "Center peg"> Center
                         <br>
-                       
-                        Gears passed to airship?
-                        <input type = "number" name = "gearsPassedInAirship" required value="0">
                         <br>
-                        <br>
-                          
-                       Defense:
-                       <br>
-                        Does the robot play defense?
-                        <br>
-                        <input type = "radio" name = "robotDefense" value = "True" checked = "checked"> Yes
-                        <br>
-                        <input type = "radio" name = "robotDefense" value = "False"> No
-                        <br>
-                      
-                       Susceptible to defense?
-                        <br>
-                        <input type = "radio" name = "susceptibleDefense" value = "True" checked = "checked"> Yes
-                        <br>
-                        <input type = "radio" name = "susceptibleDefense" value = "False"> No
-                        <br>
-                       
-                       Nuclear option? (This is the ability to dump all balls from hoppers at beginning of match, a defense tactic)
-                        <br>
-                        <input type = "radio" name = "nuclear" value = "True" checked = "checked"> Yes
-                        <br>
-                        <input type = "radio" name = "nuclear" value = "False"> No
-                        <br>
-                        <br>
-                    
+                        
+                        
                         Climbing:
                         <br>
                         
@@ -220,26 +205,35 @@
                         <br>
                         <input type = "number" name = "timeToClimb" value="" required>
                         <br>
-                        Climb rope?
-                        <br>
-                        <input type = "radio" name = "climbRope" value = "True" checked = "checked"> Yes
-                        <br>
-                        <input type = "radio" name = "climbRope" value = "False"> No
-                        <br>
-                       
+                        
                         Did the light stay on past T=0?
                         <br>
                         <input type = "radio" name = "lightOn" value = "True" checked = "checked"> Yes
                         <br>
                         <input type = "radio" name = "lightOn" value = "False"> No
                         <br>
+                        
+                        Climb rope?
                         <br>
-                      
+                        <input type = "radio" name = "climbRope" value = "True" checked = "checked"> Yes
+                        <br>
+                        <input type = "radio" name = "climbRope" value = "False"> No
+                        <br>
+                        <br>
+                        
                         Comments?
                         <input type = "text" name = "comments">
                         <br>
                         <br>
-                 
+                        
+                        Does the robot play defense?
+                        <br>
+                        <input type = "radio" name = "robotDefense" value = "True" checked = "checked"> Yes
+                        <br>
+                        <input type = "radio" name = "robotDefense" value = "False"> No
+                        <br>
+                        <br>
+                        
                         Rate the robot from 1-10 (1 being didn't move and 10 being awesome)
                         <br>
                         <input type = "number" name = "robotRating" value="" required>
