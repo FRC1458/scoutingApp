@@ -30,7 +30,7 @@
                 <th> Cross Line </th>
                 <th> Gear Use</th>
                 <th> Shooter Rating</th>
-                <th> Engage Hopper</th>
+                <th> Has shooter</th>
                 <th> Shooting Place</th>
                 <th> Where is the shooting place</th>
                 <th> Susceptible to defense</th>
