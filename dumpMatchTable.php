@@ -45,7 +45,7 @@
                 <th> Teleop hopper</th>
                 <th> Gears passed in airship</th>
                 <th> Left peg</th>
-                <th> Right ;eg</th>
+                <th> Right peg</th>
                 <th> Center peg</th>
                 <th> Heading to rope time</th>
                 <th> Time to grab rope</th>
